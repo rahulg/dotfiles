@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $(basename "${0}") <project>"
+	exit 1
+fi
+
+mkdir -p "${1}"/{,src,pkg,bin}
+
+cat << 'EOF' > "${1}/activate"
+if [ -z "$BASH_VERSION" ]; then
+	export GOPATH="$(cd "$(dirname "${0}" )" && pwd)"
+else
+	export GOPATH="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
+fi
+export OLDPS1=$PS1
+export PS1="[go:$(basename $GOPATH)] $PS1"
+alias gcd="cd $GOPATH"
+deactivate() {
+	export PS1=$OLDPS1
+	unset GOPATH
+	unset OLDPS1
+	unalias gcd
+	unset deactivate
+}
+EOF
+
+cat << 'EOF' > "${1}/activate.fish"
+set -x GOPATH (dirname (status -f))
+function gcd
+    cd $GOPATH
+end
+function deactivate
+    set -e GOPATH
+    functions -e deactivate
+end
+EOF
+
+cat << 'EOF' > "${1}/$(basename "${1}").sublime-project"
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"GoSublime": {
+			"env": {
+				"GOPATH": "$PWD"
+			}
+		}
+	}
+}
+EOF

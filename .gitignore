@@ -1,0 +1,12 @@
+# OS X
+.DS_Store
+._*
+.Spotlight-V100
+Icon?
+.Trashes
+
+# Sublime Text
+*.sublime-workspace
+
+# Object files
+*.o

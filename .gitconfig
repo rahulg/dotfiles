@@ -1,0 +1,16 @@
+[user]
+    name = Rahul AG
+    email = r@hul.ag
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    diff = always
+[help]
+    autocorrect = 1
+[push]
+    default = simple
+[alias]
+    st = status
+    ad = add
+    ci = commit
+    br = branch
