@@ -18,7 +18,7 @@ if set -q Apple_PubSub_Socket_Render
 	# Path.Homebrew
 	set -x PATH /usr/local/bin /usr/local/sbin $PATH
 	# Path.Scripts
-	set -x PATH $PATH /Users/rahul/projects/tools
+	set -x PATH $PATH $HOME/tools
 	# Path.Node.js 
 	set -x PATH $PATH /usr/local/share/npm/bin
 	# Path.compass gem hack
