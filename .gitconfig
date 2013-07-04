@@ -5,6 +5,7 @@
     excludesfile = ~/.gitignore
 [color]
     diff = always
+    ui = always
 [help]
     autocorrect = 1
 [push]
@@ -13,4 +14,5 @@
     st = status
     ad = add
     ci = commit
+    co = checkout
     br = branch
