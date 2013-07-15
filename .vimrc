@@ -31,4 +31,6 @@ set nobackup
 set nowb
 set noswapfile
 
-set mouse=a
+if has("mouse")
+	set mouse=a
+endif
