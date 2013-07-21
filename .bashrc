@@ -4,6 +4,7 @@ export HISTCONTROL=ignoreboth
 # Environment
 export MAKEFLAGS="-j4"
 export LANG="en_GB.UTF-8"
+export EDITOR="vim"
 
 SYSTEM=$(uname -s)
 if [ ${SYSTEM} = "Darwin" ]; then
