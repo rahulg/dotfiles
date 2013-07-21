@@ -34,3 +34,5 @@ set noswapfile
 if has("mouse")
 	set mouse=a
 endif
+
+autocmd Filetype python setl expandtab

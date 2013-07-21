@@ -24,7 +24,7 @@ if set -q Apple_PubSub_Socket_Render
 	# Path.compass gem hack
 	set -x PATH $PATH (brew --prefix ruby)/bin
 	# Path.Android
-	set -x PATH $PATH /Applications/AndroidStudio.app/sdk/platform-tools /Applications/AndroidStudio.app/sdk/tools
+	set -x PATH $PATH /Applications/Android\ Studio.app/sdk/platform-tools /Applications/Android\ Studio.app/sdk/tools
 
 else
 
