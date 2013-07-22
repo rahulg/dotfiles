@@ -4,6 +4,7 @@ set -x fish_greeting ""
 # Env
 set -x MAKEFLAGS "-j4"
 set -x LANG "en_GB.UTF-8"
+set -x LC_ALL "en_GB.UTF-8"
 set -x EDITOR "vim"
 
 if set -q Apple_PubSub_Socket_Render
