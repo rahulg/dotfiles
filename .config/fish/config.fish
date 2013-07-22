@@ -1,5 +1,5 @@
 # Shut up, fish.
-set fish_greeting ""
+set -x fish_greeting ""
 
 # Env
 set -x MAKEFLAGS "-j4"
@@ -11,6 +11,10 @@ if set -q Apple_PubSub_Socket_Render
 	# bind \cleft and \cright
 	bind \e\[5D prevd-or-backward-word
 	bind \e\[5C nextd-or-forward-word
+
+end
+
+if [ (uname -s) = "Darwin" ]
 
 	set -x GOROOT (brew --prefix go)
 	set -x GOHOSTOS 'darwin'
