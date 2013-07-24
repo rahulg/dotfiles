@@ -31,6 +31,8 @@ set nobackup
 set nowb
 set noswapfile
 
+set clipboard=unnamed
+
 if has("mouse")
 	set mouse=a
 endif
