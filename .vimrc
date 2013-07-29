@@ -38,3 +38,21 @@ if has("mouse")
 endif
 
 autocmd Filetype python setl expandtab
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" the_silver_searcher
+Bundle 'rking/ag.vim'
+" JS
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'leshill/vim-json'
+" HTML
+Bundle 'othree/html5.vim'
+Bundle 'indenthtml.vim'
+" Obj-C
+Bundle 'msanders/cocoa.vim'
+" Nginx
+Bundle 'mutewinter/nginx.vim'
+filetype plugin indent on
