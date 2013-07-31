@@ -10,3 +10,6 @@ Icon?
 
 # Object files
 *.o
+
+# Virtualenv
+venv
