@@ -1,4 +1,4 @@
-function docker-clean
+function docker-clean --description 'Clean up all stopped containers and unused images'
 	docker ps -q -a | sort > /tmp/dcp-all
 	docker ps -q | sort > /tmp/dcp-run
 	comm -2 -3 /tmp/dcp-all /tmp/dcp-run > /tmp/dcp-dead
