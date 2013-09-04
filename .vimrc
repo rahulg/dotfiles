@@ -39,6 +39,9 @@ endif
 
 autocmd Filetype python setl expandtab
 
+set nocompatible
+filetype off
+
 set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/vundle/
@@ -58,5 +61,5 @@ Bundle 'msanders/cocoa.vim'
 " Nginx
 Bundle 'mutewinter/nginx.vim'
 " Floobits
-Bundle 'Floobits'
+Bundle 'Floobits/floobits-vim'
 filetype plugin indent on
