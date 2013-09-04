@@ -39,6 +39,8 @@ endif
 
 autocmd Filetype python setl expandtab
 
+set shell=/bin/bash
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
