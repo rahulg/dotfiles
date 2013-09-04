@@ -6,7 +6,7 @@ Icon?
 .Trashes
 
 # Sublime Text
-*.sublime-workspace
+*.sublime-*
 
 # Object files
 *.o
