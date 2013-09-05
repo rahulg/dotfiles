@@ -53,6 +53,9 @@ set -x GOARM '7'
 set -x VIRTUALENV_DISTRIBUTE true
 set -x PIP_REQUIRE_VIRTUALENV true
 
+# cd path
+set -x CDPATH . ~ ~/Projects ~/Work
+
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'

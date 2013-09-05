@@ -48,3 +48,6 @@ export GOARM='7'
 # Virtualenv stuff
 export VIRTUALENV_DISTRIBUTE=true
 export PIP_REQUIRE_VIRTUALENV=true
+
+# cd path
+export CDPATH=".:~:~/Projects:~/Work"
