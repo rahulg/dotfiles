@@ -54,7 +54,7 @@ set -x VIRTUALENV_DISTRIBUTE true
 set -x PIP_REQUIRE_VIRTUALENV true
 
 # cd path
-set -x CDPATH . ~ ~/Projects ~/Work
+set -x CDPATH . ~
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'

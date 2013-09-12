@@ -50,7 +50,7 @@ export VIRTUALENV_DISTRIBUTE=true
 export PIP_REQUIRE_VIRTUALENV=true
 
 # cd path
-export CDPATH=".:~:~/Projects:~/Work"
+export CDPATH=".:~"
 
 # Override PS1
 export PS1='\h:\W \u\\$ '
