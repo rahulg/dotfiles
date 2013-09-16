@@ -53,10 +53,6 @@ set -x GOHOSTARCH 'amd64'
 set -x GOARCH 'amd64'
 set -x GOARM '7'
 
-# Virtualenv stuff
-set -x VIRTUALENV_DISTRIBUTE true
-set -x PIP_REQUIRE_VIRTUALENV true
-
 # cd path
 set -x CDPATH . ~
 
