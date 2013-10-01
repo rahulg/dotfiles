@@ -61,5 +61,5 @@ Bundle 'msanders/cocoa.vim'
 " Nginx
 Bundle 'mutewinter/nginx.vim'
 " Floobits
-Bundle 'Floobits/floobits-vim'
+"Bundle 'Floobits/floobits-vim'
 filetype plugin indent on
