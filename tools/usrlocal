@@ -1,0 +1,40 @@
+#!/bin/bash
+
+usage() {
+	echo "Usage: ${0} <ENV>"
+}
+
+envir() {
+	sudo rm /usr/local && sudo ln -s /usr/locals/${1} /usr/local
+}
+
+list_envs() {
+	ls /usr/locals
+}
+
+cur_env() {
+	ls -l /usr/local | sed -e 's/.*-> \/usr\/locals\///'
+}
+
+case $1 in
+	help)
+		usage
+		;;
+	-h)
+		usage
+		;;
+	'')
+		cur_env
+		;;
+	list)
+		list_envs
+		;;
+	*)
+		if [ -d /usr/locals/${1} ]
+		then
+			envir ${1}
+		else
+			echo "No usrlocal environment ${1}"
+		fi
+		;;
+esac

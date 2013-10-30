@@ -17,18 +17,12 @@ end
 
 if [ (uname -s) = 'Darwin' ]
 
-	set -x GOROOT (brew --prefix go)
+	set -x GOROOT '/usr/local/go'
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
-	# Path.Homebrew
-	set -x PATH /usr/local/bin /usr/local/sbin $PATH
-	# Path.Scripts
-	set -x PATH $PATH $HOME/tools
 	# Path.Node.js 
 	set -x PATH $PATH /usr/local/share/npm/bin
-	# Path.compass gem hack
-	set -x PATH $PATH (brew --prefix ruby)/bin
 	# Path.Android
 	set -x PATH $PATH /Applications/Android\ Studio.app/sdk/platform-tools /Applications/Android\ Studio.app/sdk/tools
 
@@ -38,8 +32,6 @@ else
 	set -x GOHOSTOS 'linux'
 	set -x GOOS 'linux'
 	
-	# Path.Scripts
-	set -x PATH $PATH $HOME/tools
 	# Path.Node.js 
 	set -x PATH $PATH /usr/share/npm/bin
 
@@ -52,6 +44,11 @@ end
 set -x GOHOSTARCH 'amd64'
 set -x GOARCH 'amd64'
 set -x GOARM '7'
+
+# Path.usr-local
+set -x PATH /usr/local/bin /usr/local/sbin $PATH
+# Path.Scripts
+set -x PATH $PATH $HOME/tools
 
 # cd path
 set -x CDPATH . ~
