@@ -24,7 +24,7 @@ if [ (uname -s) = 'Darwin' ]
 	# Path.Node.js 
 	set -x PATH $PATH /usr/local/share/npm/bin
 	# Path.Android
-	set -x PATH $PATH /Applications/Android\ Studio.app/sdk/platform-tools /Applications/Android\ Studio.app/sdk/tools
+	set -x PATH $PATH /Applications/Android\ Studio.app/sdk/platform-tools /Applications/Android\ Studio.app/sdk/tools /Applications/VMware\ Fusion.app/Contents/Library
 
 else
 
