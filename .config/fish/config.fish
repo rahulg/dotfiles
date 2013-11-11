@@ -2,7 +2,7 @@
 set -x fish_greeting ''
 
 # Env
-set -x MAKEFLAGS '-j4'
+set -x MAKEFLAGS '-j8'
 set -x LANG 'en_GB.UTF-8'
 set -x LC_ALL 'en_GB.UTF-8'
 set -x EDITOR 'vim'
@@ -17,7 +17,7 @@ end
 
 if [ (uname -s) = 'Darwin' ]
 
-	set -x GOROOT '/usr/local/go'
+	set -x GOROOT '/usr/local/opt/go'
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
@@ -25,6 +25,8 @@ if [ (uname -s) = 'Darwin' ]
 	set -x PATH $PATH /usr/local/share/npm/bin
 	# Path.Android
 	set -x PATH $PATH /Applications/Android\ Studio.app/sdk/platform-tools /Applications/Android\ Studio.app/sdk/tools /Applications/VMware\ Fusion.app/Contents/Library
+	# Path.Airport
+	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
 
 else
 
