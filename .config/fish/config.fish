@@ -17,7 +17,6 @@ end
 
 if [ (uname -s) = 'Darwin' ]
 
-	set -x GOROOT '/usr/local/opt/go'
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
@@ -30,7 +29,6 @@ if [ (uname -s) = 'Darwin' ]
 
 else
 
-	set -x GOROOT '/usr/lib/go'
 	set -x GOHOSTOS 'linux'
 	set -x GOOS 'linux'
 	

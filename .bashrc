@@ -9,7 +9,6 @@ export EDITOR="vim"
 SYSTEM=$(uname -s)
 if [ ${SYSTEM} = "Darwin" ]; then
 
-	export GOROOT="/usr/local/opt/go"
 	export GOHOSTOS='darwin'
 	export GOOS='darwin'
 
@@ -22,7 +21,6 @@ if [ ${SYSTEM} = "Darwin" ]; then
 
 else
 
-	export GOROOT="/usr/lib/go/"
 	export GOHOSTOS='linux'
 	export GOOS='linux'
 	
