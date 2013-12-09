@@ -12,5 +12,4 @@ Icon?
 *.o
 
 # Virtualenv
-venv
-venv3
+venv*
