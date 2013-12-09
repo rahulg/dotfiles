@@ -17,10 +17,10 @@ function venv -d 'Activates the virtualenv in the current directory, creates one
 		set virt venv27
 	end
 
-	if test ! -d venv
+	if test ! -d {$virt}
 		virtualenv --python={$vpython} {$virt}
 	else
-		source {virt}/bin/activate.fish
+		source {$virt}/bin/activate.fish
 	end
 
 end
