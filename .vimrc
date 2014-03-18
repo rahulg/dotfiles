@@ -52,8 +52,15 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+" fish-shell
+Bundle 'dag/vim-fish'
+autocmd FileType fish compiler fish
+autocmd FileType fish setlocal textwidth=79
+autocmd FileType fish setlocal foldmethod=expr
 " the_silver_searcher
 Bundle 'rking/ag.vim'
+" Ansible-YAML
+Bundle 'chase/vim-ansible-yaml'
 " JS
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -65,6 +72,4 @@ Bundle 'indenthtml.vim'
 Bundle 'msanders/cocoa.vim'
 " Nginx
 Bundle 'mutewinter/nginx.vim'
-" Floobits
-"Bundle 'Floobits/floobits-vim'
 filetype plugin indent on
