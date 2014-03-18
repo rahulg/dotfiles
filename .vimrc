@@ -31,6 +31,11 @@ set nobackup
 set nowb
 set noswapfile
 
+map <c-n> :tabn<CR>
+map <c-p> :tabp<CR>
+map <c-t> :Te<CR>
+map <c-f> :Ex<CR>
+
 set clipboard=unnamed
 
 if has("mouse")
