@@ -14,8 +14,6 @@ if [ ${SYSTEM} = "Darwin" ]; then
 
 	# Path.Node.js 
 	export PATH="$PATH:/usr/local/share/npm/bin"
-	# Path.Android
-	export PATH="$PATH:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk/tools"
 	# Path.VMWare
 	export PATH="$PATH:/Applications/VMware\ Fusion.app/Contents/Library"
 
