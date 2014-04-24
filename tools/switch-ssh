@@ -1,0 +1,10 @@
+#!/usr/bin/env expect
+
+set timeout -1
+set sw [lindex $argv 0]
+
+spawn ssh $sw
+set prompt ":|#|\\\$"
+interact -o -nobuffer -re $prompt return
+send "password\r"
+interact
