@@ -20,8 +20,6 @@ if [ (uname -s) = 'Darwin' ]
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
-	# Path.Node.js 
-	set -x PATH $PATH /usr/local/share/npm/bin
 	# Path.Airport
 	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
 
@@ -30,8 +28,8 @@ else
 	set -x GOHOSTOS 'linux'
 	set -x GOOS 'linux'
 	
-	# Path.Node.js 
-	set -x PATH $PATH /usr/share/npm/bin
+	# Path.sbin
+	set -x PATH $PATH /usr/sbin /sbin
 
 	# Clipboard helpers
 	functions -c __pbcopy_x11 pbcopy
