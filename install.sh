@@ -6,10 +6,7 @@ if [[ $(dirname $0) != '.' ]]; then
 fi
 
 echo "Copying…"
-for file in $(ls -A . | grep -Ev '(.git$|install.sh)'); do
-	rm -rf ~/"${file}" 2> /dev/null
-	cp -rv "$PWD/${file}" ~/"${file}"
-done
+rsync -av --exclude='.git' --exclude='install.sh' . ~
 
 echo "Linking…"
 if [[ $(uname -s) == "Darwin" ]]; then
