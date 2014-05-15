@@ -38,6 +38,8 @@ map <c-f> :Ex<CR>
 
 set clipboard=unnamed
 
+set laststatus=2
+
 if has("mouse")
 	set mouse=a
 endif
@@ -72,4 +74,6 @@ Bundle 'indenthtml.vim'
 Bundle 'msanders/cocoa.vim'
 " Nginx
 Bundle 'mutewinter/nginx.vim'
+" status line
+Bundle 'itchyny/lightline.vim'
 filetype plugin indent on
