@@ -11,5 +11,6 @@ Icon?
 # Object files
 *.o
 
-# Virtualenv
+# Python
 venv*
+__pycache__
