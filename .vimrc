@@ -32,7 +32,6 @@ set nowb
 set noswapfile
 
 map <c-n> :tabn<CR>
-map <c-p> :tabp<CR>
 map <c-t> :Te<CR>
 map <c-f> :Ex<CR>
 
@@ -45,6 +44,8 @@ if has("mouse")
 endif
 
 autocmd Filetype python setl expandtab
+autocmd Filetype yaml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 set nocompatible
 filetype off
