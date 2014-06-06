@@ -77,4 +77,6 @@ Bundle 'msanders/cocoa.vim'
 Bundle 'mutewinter/nginx.vim'
 " status line
 Bundle 'itchyny/lightline.vim'
+" readline
+Bundle 'tpope/vim-rsi'
 filetype plugin indent on
