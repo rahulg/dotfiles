@@ -62,18 +62,18 @@ autocmd FileType fish setlocal textwidth=79
 autocmd FileType fish setlocal foldmethod=expr
 " the_silver_searcher
 Bundle 'rking/ag.vim'
-" Ansible-YAML
+" ansible-yaml
 Bundle 'chase/vim-ansible-yaml'
-" JS
+" js
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
-" HTML
+" html
 Bundle 'othree/html5.vim'
 Bundle 'indenthtml.vim'
-" Obj-C
+" obj-c
 Bundle 'msanders/cocoa.vim'
-" Nginx
+" nginx
 Bundle 'mutewinter/nginx.vim'
 " status line
 Bundle 'itchyny/lightline.vim'
