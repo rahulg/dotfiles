@@ -79,4 +79,6 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'itchyny/lightline.vim'
 " readline
 Bundle 'tpope/vim-rsi'
+" ctrl-p
+Bundle 'kien/ctrlp.vim'
 filetype plugin indent on
