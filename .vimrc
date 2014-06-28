@@ -52,33 +52,41 @@ filetype off
 
 set shell=/bin/bash
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 " fish-shell
-Bundle 'dag/vim-fish'
+Plugin 'dag/vim-fish'
 autocmd FileType fish compiler fish
 autocmd FileType fish setlocal textwidth=79
 autocmd FileType fish setlocal foldmethod=expr
 " the_silver_searcher
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 " ansible-yaml
-Bundle 'chase/vim-ansible-yaml'
+Plugin 'chase/vim-ansible-yaml'
 " js
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'leshill/vim-json'
 " html
-Bundle 'othree/html5.vim'
-Bundle 'indenthtml.vim'
+Plugin 'othree/html5.vim'
+Plugin 'indenthtml.vim'
 " obj-c
-Bundle 'msanders/cocoa.vim'
+Plugin 'msanders/cocoa.vim'
 " nginx
-Bundle 'mutewinter/nginx.vim'
+Plugin 'mutewinter/nginx.vim'
 " status line
-Bundle 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
 " readline
-Bundle 'tpope/vim-rsi'
+Plugin 'tpope/vim-rsi'
 " ctrl-p
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
+" golang
+Plugin 'fatih/vim-go'
+let g:go_disable_autoinstall = 1
+" autocomplete
+Plugin 'Valloric/YouCompleteMe'
+" ctags-nav
+Plugin 'majutsushi/tagbar'
+call vundle#end()
 filetype plugin indent on
