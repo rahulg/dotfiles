@@ -88,5 +88,7 @@ let g:go_disable_autoinstall = 1
 Plugin 'Valloric/YouCompleteMe'
 " ctags-nav
 Plugin 'majutsushi/tagbar'
+" surrounding things with tokens
+Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on
