@@ -41,6 +41,8 @@ set -x GOHOSTARCH 'amd64'
 set -x GOARCH 'amd64'
 set -x GOARM '7'
 
+set -x ANSIBLE_COW_SELECTION random
+
 # Path.usr-local
 set -x PATH /usr/local/bin /usr/local/sbin $PATH
 # Path.Scripts
