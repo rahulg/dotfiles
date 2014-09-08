@@ -19,7 +19,7 @@ if [ (uname -s) = 'Darwin' ]
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
-	set -x MAKEFLAGS "-j(sysctl -n hw.ncpu)"
+	set -x MAKEFLAGS '-j'(sysctl -n hw.ncpu)
 
 	# Path.Airport
 	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
@@ -29,7 +29,7 @@ else
 	set -x GOHOSTOS 'linux'
 	set -x GOOS 'linux'
 	
-	set -x MAKEFLAGS "-j(nproc)"
+	set -x MAKEFLAGS '-j'(nproc)
 
 	# Clipboard helpers
 	functions -c __pbcopy_x11 pbcopy
