@@ -2,7 +2,6 @@
 set -x fish_greeting ''
 
 # Env
-set -x MAKEFLAGS '-j8'
 set -x LANG 'en_GB.UTF-8'
 set -x LC_ALL 'en_GB.UTF-8'
 set -x EDITOR 'vim'
@@ -20,6 +19,8 @@ if [ (uname -s) = 'Darwin' ]
 	set -x GOHOSTOS 'darwin'
 	set -x GOOS 'darwin'
 
+	set -x MAKEFLAGS "-j(sysctl -n hw.ncpu)"
+
 	# Path.Airport
 	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
 
@@ -28,8 +29,7 @@ else
 	set -x GOHOSTOS 'linux'
 	set -x GOOS 'linux'
 	
-	# Path.sbin
-	set -x PATH $PATH /usr/sbin /sbin
+	set -x MAKEFLAGS "-j(nproc)"
 
 	# Clipboard helpers
 	functions -c __pbcopy_x11 pbcopy
