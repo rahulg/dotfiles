@@ -65,12 +65,3 @@ set __fish_git_prompt_char_upstream_behind '-'
 set __fish_git_prompt_char_upstream_equal '.'
 set __fish_git_prompt_char_upstream_diverged 'X'
 
-# Keybinds and Jazz
-function __history_sed --description 'sed previous command'
-	set -x __hs_sedcmd (commandline -b)
-	commandline -j (echo $history[1] | sed -E $__cs_sedcmd ^/dev/null)
-	commandline -f end-of-line
-	set -e __hs_sedcmd
-end
-
-bind \cs __history_sed
