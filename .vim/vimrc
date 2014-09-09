@@ -35,7 +35,12 @@ map <c-n> :tabn<CR>
 map <c-t> :Te<CR>
 map <c-f> :Ex<CR>
 
-set clipboard=unnamed
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Linux"
+	set clipboard=unnamedplus
+elseif os == "Darwin"
+	set clipboard=unnamed
+endif
 
 set laststatus=2
 
