@@ -28,8 +28,10 @@ if [ (uname -s) = 'Darwin' ]
 
 else
 
-	if [ $COLORTERM = 'gnome-terminal' -o $COLORTERM = 'xfce4-terminal' ]
-		set -x TERM 'xterm-256color'
+	if not set -q TMUX
+		if [ $COLORTERM = 'gnome-terminal' -o $COLORTERM = 'xfce4-terminal' ]
+			set -x TERM 'xterm-256color'
+		end
 	end
 
 	set -x GOHOSTOS 'linux'
