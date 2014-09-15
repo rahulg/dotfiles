@@ -23,6 +23,8 @@ if [ (uname -s) = 'Darwin' ]
 
 	# Path.Airport
 	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
+	# Path.usr-local
+	set -x PATH /usr/local/bin /usr/local/sbin $PATH
 
 else
 
@@ -47,8 +49,6 @@ set -x GOARM '7'
 
 set -x ANSIBLE_COW_SELECTION random
 
-# Path.usr-local
-set -x PATH /usr/local/bin /usr/local/sbin $PATH
 # Path.Scripts
 set -x PATH $PATH $HOME/tools
 
