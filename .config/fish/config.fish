@@ -49,7 +49,7 @@ set -x GOHOSTARCH 'amd64'
 set -x GOARCH 'amd64'
 set -x GOARM '7'
 
-set -x ANSIBLE_COW_SELECTION random
+set -x ANSIBLE_NOCOWS 1
 
 # Path.Scripts
 set -x PATH $PATH $HOME/tools
