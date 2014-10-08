@@ -1,4 +1,4 @@
-function vim --description 'vim wrapper'
+function vim -d 'vim wrapper'
 	set rtus reattach-to-user-namespace
 	if [ ! -x "(which $rtus)" ]
 		set rtus command

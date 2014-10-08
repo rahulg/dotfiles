@@ -1,5 +1,4 @@
 function venv -d 'Activates the virtualenv in the current directory, creates one if necessary.'
-
 	if set -q argv[1]
 		switch $argv[1]
 			case 2
@@ -15,16 +14,12 @@ function venv -d 'Activates the virtualenv in the current directory, creates one
 	else
 		set virt (ls | grep -oE 'venv(2|3|py)' ^/dev/null | head -n1)
 		if [ -z $virt ]
-			echo "no venv found, and no version given"
+			echo 'no venv found, and no version given'
 			return 1
 		end
 	end
-
-	if test ! -d $virt
-		virtualenv --python=$vpython $virt
-		source {$virt}/bin/activate.fish
-	else
-		source {$virt}/bin/activate.fish
+	if [ ! -d $virt ]
+		virtualenv --python={$vpython} $virt
 	end
-
+	source {$virt}/bin/activate.fish
 end

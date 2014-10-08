@@ -1,5 +1,4 @@
-function __fish_print_hostnames --description 'Print a list of known hostnames'
-
+function __fish_print_hostnames -d 'Print a list of known hostnames'
 	# Print all hosts from /etc/hosts
 	if test -x /usr/bin/getent
 		getent hosts | tr -s ' ' ' ' | cut -d ' ' -f 2- | tr ' ' '\n'
@@ -8,7 +7,7 @@ function __fish_print_hostnames --description 'Print a list of known hostnames'
 	end
 	# Print nfs servers from /etc/fstab
 		if test -r /etc/fstab
-		sgrep </etc/fstab "^\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\|[a-zA-Z.]*\):"|cut -d : -f 1
+		sgrep </etc/fstab '^\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\|[a-zA-Z.]*\):'|cut -d : -f 1
 	end
 
 	# Print hosts with known ssh keys
