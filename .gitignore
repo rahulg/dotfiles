@@ -14,5 +14,7 @@ Icon?
 *.ko
 
 # Python
-venv*
+venv2
+venv3
+venvpy
 __pycache__
