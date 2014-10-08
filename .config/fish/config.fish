@@ -58,3 +58,6 @@ set __fish_git_prompt_char_upstream_behind '-'
 set __fish_git_prompt_char_upstream_equal '.'
 set __fish_git_prompt_char_upstream_diverged 'X'
 
+if [ -f ~/.config/fish/local.fish ]
+	source ~/.config/fish/local.fish
+end
