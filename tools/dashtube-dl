@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -u
+
 id=$(youtube-dl --get-id $1)
 
 mkdir -p "/tmp/${id}"

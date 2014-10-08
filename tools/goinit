@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -u
+
 if [ $# -ne 1 ]; then
 	echo "Usage: $(basename "${0}") <project>"
 	exit 1

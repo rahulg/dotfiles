@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -u
+
 declare -A alerts=(
 		["0"]="close_notify"
 		["10"]="unexpected_message"
