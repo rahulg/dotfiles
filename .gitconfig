@@ -7,7 +7,7 @@
     diff = always
     ui = always
 [help]
-    autocorrect = 1
+    autocorrect = -1
 [push]
     default = simple
 [alias]
