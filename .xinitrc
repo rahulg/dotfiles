@@ -1,5 +1,5 @@
 # No systemd-localed? Then set xkbmap manually.
-[[ -x $(which localectl) ]] || setxkbmap -layout dvorak -option 'ctrl:nocaps,altwin:ctrl_alt_win,compose:menu,lv3:ralt_switch'
+[[ -x $(which localectl) ]] || setxkbmap -layout dvorak -option 'ctrl:nocaps,altwin:swap_alt_win'
 
 if [[ -d /etc/X11/xinit/xinitrc.d ]]; then
 	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
@@ -13,4 +13,4 @@ then
 	xmodmap ~/.Xmodmap
 fi
 
-exec startkde
+exec gnome-session
