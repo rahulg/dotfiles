@@ -8,8 +8,10 @@ Icon?
 # Sublime Text
 *.sublime-*
 
-# Object files
+# Build output
 *.o
+*.so
+*.ko
 
 # Python
 venv*
