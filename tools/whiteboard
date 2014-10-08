@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+set -u
+
+INFILE=${1}
+OUTFILE=${2}
+
+convert ${INFILE} -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 ${OUTFILE}
