@@ -19,7 +19,7 @@ set softtabstop=4
 set autochdir
 set autowriteall
 
-syntax enable
+set modeline
 
 set undolevels=1000
 set backspace=indent,eol,start
@@ -34,6 +34,8 @@ set noswapfile
 map <c-n> :tabn<CR>
 map <c-t> :Te<CR>
 map <c-f> :Ex<CR>
+
+syntax enable
 
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Linux"
@@ -52,9 +54,9 @@ autocmd Filetype python setl expandtab
 autocmd Filetype yaml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+" vundle init
 set nocompatible
 filetype off
-
 set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/Vundle.vim
