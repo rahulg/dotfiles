@@ -12,7 +12,6 @@
     default = simple
 [alias]
     st = status
-    ad = add
     ci = commit
     co = checkout
     br = branch
