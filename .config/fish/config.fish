@@ -1,7 +1,7 @@
-# Shut up, fish.
+# shut up, fish.
 set -x fish_greeting ''
 
-# Env
+# env
 set -x LANG 'en_GB.UTF-8'
 set -x LC_ALL 'en_GB.UTF-8'
 set -x EDITOR 'vim'
@@ -16,14 +16,11 @@ end
 
 if [ (uname -s) = 'Darwin' ]
 
-	set -x GOHOSTOS 'darwin'
-	set -x GOOS 'darwin'
-
 	set -x MAKEFLAGS '-j'(sysctl -n hw.ncpu)
 
-	# Path.Airport
+	# path::airport
 	set -x PATH $PATH /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
-	# Path.usr-local
+	# path::/usr/local
 	set -x PATH /usr/local/bin /usr/local/sbin $PATH
 
 else
@@ -34,36 +31,26 @@ else
 		end
 	end
 
-	set -x GOHOSTOS 'linux'
-	set -x GOOS 'linux'
-	
 	set -x MAKEFLAGS '-j'(nproc)
 
-	# Clipboard helpers
+	# clipboard helpers
 	functions -c __pbcopy_x11 pbcopy
 	functions -c __pbpaste_x11 pbpaste
 
 end
 
-set -x GOHOSTARCH 'amd64'
-set -x GOARCH 'amd64'
-set -x GOARM '7'
-
 set -x ANSIBLE_NOCOWS 1
 
-# Path.Scripts
+# path::scripts
 set -x PATH $PATH $HOME/tools
 
-# cd path
-set -x CDPATH . ~
-
-# Fish git prompt
+# fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'auto'
 set __fish_git_prompt_showuntrackedfiles 'yes'
 set __fish_git_prompt_color_branch yellow
-# Status Chars
+# status chars
 set __fish_git_prompt_char_dirtystate 'd' 
 set __fish_git_prompt_char_stagedstate 's' 
 set __fish_git_prompt_char_upstream_ahead '+' 
