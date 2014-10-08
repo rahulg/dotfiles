@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+set -u
+
+KFILE=${KERN:-/boot/vmlinuz-linux}
+
+KVER_INS=$(file $KFILE | sed -E 's#^.*version (\S+).*$#\1#')
+KVER_RUN=$(uname -r)
+
+if [[ $KVER_RUN != $KVER_INS ]]; then
+	echo 'Reboot required!'
+	exit 1
+else
+	exit 0
+fi
