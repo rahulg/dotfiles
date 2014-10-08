@@ -3,7 +3,6 @@ set -x fish_greeting ''
 
 # env
 set -x LANG 'en_GB.UTF-8'
-set -x LC_ALL 'en_GB.UTF-8'
 set -x EDITOR 'vim'
 
 if set -q Apple_PubSub_Socket_Render
