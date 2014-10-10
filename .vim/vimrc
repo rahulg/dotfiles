@@ -97,5 +97,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 " surrounding things with tokens
 Plugin 'tpope/vim-surround'
+" clang-format
+Plugin 'rhysd/vim-clang-format'
+let g:clang_format#code_style = 'file'
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_format_on_insert_leave = 1
+let g:clang_format#auto_formatexpr = 1
 call vundle#end()
 filetype plugin indent on
