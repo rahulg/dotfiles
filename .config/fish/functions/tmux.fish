@@ -7,5 +7,5 @@ function tmux -d 'tmux config selection wrapper'
 			set tmconf x11.conf
 		end
 	end
-	command tmux -f ~/.config/tmux{$tmconf} $argv
+	command tmux -f ~/.config/tmux/{$tmconf} $argv
 end
