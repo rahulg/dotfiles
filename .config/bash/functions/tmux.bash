@@ -7,5 +7,5 @@ tmux() {
 			tmconf=x11.conf
 		fi
 	fi
-	command tmux -f ~/.config/tmux${tmconf} ${@}
+	command tmux -f ~/.config/tmux/${tmconf} ${@}
 }
