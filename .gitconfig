@@ -1,18 +1,19 @@
 [user]
-    name = Rahul AG
-    email = r@hul.ag
+	name = Rahul AG
+	email = r@hul.ag
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 [color]
-    diff = always
-    ui = always
+	diff = always
+	ui = always
 [help]
-    autocorrect = -1
+	autocorrect = -1
 [push]
-    default = simple
+	default = simple
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    br = branch
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	bra = branch -a
 	lst = ls-tree --name-only -r HEAD
