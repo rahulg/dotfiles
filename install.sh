@@ -6,7 +6,12 @@ if [[ $(dirname $0) != '.' ]]; then
 fi
 
 echo "Copying…"
-rsync -av --exclude='.git' --exclude='install.sh' . ~
+rsync -av \
+	--exclude='.git' \
+	--exclude='install.sh' \
+	--exclude='.config/fish/local.fish' \
+	--exclude='.config/bash/local.bash' \
+	. ~
 
 echo "Linking…"
 if [[ $(uname -s) == "Darwin" ]]; then
