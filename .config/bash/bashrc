@@ -30,7 +30,7 @@ else
 fi
 
 export ANSIBLE_NOCOWS=1
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable' -\""
 
 # path::scripts
 export PATH="$PATH:$HOME/tools"

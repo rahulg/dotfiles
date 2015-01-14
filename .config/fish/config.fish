@@ -39,7 +39,7 @@ else
 end
 
 set -x ANSIBLE_NOCOWS 1
-set -x MANPAGER "/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma' -\""
+set -x MANPAGER "/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable' -\""
 
 # path::scripts
 set -x PATH $PATH $HOME/tools
