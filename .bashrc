@@ -1,1 +1,1 @@
-source ~/.config/bash/bashrc
+source ~/.config/bash/config.bash
