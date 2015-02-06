@@ -6,6 +6,7 @@ set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+set nohlsearch
 
 set autoindent
 set cindent
@@ -48,6 +49,7 @@ set laststatus=2
 
 if has("mouse")
 	set mouse=a
+	set ttymouse=xterm2
 endif
 
 autocmd Filetype python setl expandtab
