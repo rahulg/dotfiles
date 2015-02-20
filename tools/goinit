@@ -50,21 +50,3 @@ function deactivate
 	functions -e deactivate
 end
 EOF
-
-cat << 'EOF' > "${1}/$(basename "${1}").sublime-project"
-{
-	"folders":
-	[
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"GoSublime": {
-			"env": {
-				"GOPATH": "$PWD"
-			}
-		}
-	}
-}
-EOF
