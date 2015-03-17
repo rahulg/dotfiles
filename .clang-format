@@ -1,12 +1,1 @@
----
-Language:                             Cpp
-BasedOnStyle:                         LLVM
-IndentWidth:                          4
-TabWidth:                             4
-UseTab:                               ForIndentation
-BreakBeforeBraces:                    Linux
-AllowShortIfStatementsOnASingleLine:  false
-IndentCaseLabels:                     false
-Cpp11BracedListStyle:                 true
-Standard:                             Cpp11
-...
+.config/clang-format/clang-format
