@@ -1,7 +1,8 @@
 function vim -d 'vim wrapper'
-	set rtus reattach-to-user-namespace
-	if [ ! -x "(which $rtus)" ]
-		set rtus command
+	set cmd command
+	which reattach-to-user-namespace >/dev/null ^/dev/null
+	if [ {$status} -eq 0 ]
+		set cmd reattach-to-user-namespace
 	end
-	eval $rtus vim $argv
+	eval {$cmd} vim {$argv}
 end

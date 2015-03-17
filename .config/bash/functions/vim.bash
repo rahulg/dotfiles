@@ -1,7 +1,8 @@
 vim() {
-	rtus=reattach-to-user-namespace
-	if [[ ! -x $(which ${rtus}) ]]; then
-		rtus=command
+	cmd=command
+	which reattach-to-user-namespace >/dev/null 2>/dev/null
+	if [[ ${?} -eq 0 ]]; then
+		cmd=reattach-to-user-namespace
 	fi
-	eval ${rtus} vim ${@}
+	eval ${cmd} vim ${@}
 }
