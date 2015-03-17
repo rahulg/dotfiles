@@ -1,7 +1,0 @@
-#!/usr/bin/env fish
-
-set _baseurl $argv[1]
-
-while read -p 'set_color green; echo -n curl; set_color normal; echo -n "> "' _method _endpoint _args
-	curl -fsSLX (echo $_method | tr [a-z] [A-Z]) {$_baseurl}{$_endpoint} {$_args}
-end
