@@ -10,9 +10,6 @@ else
 
 	export MAKEFLAGS="-j$(nproc)"
 
-	alias pbcopy='xsel -ibk'
-	alias pbpaste='xsel -ob'
-
 fi
 
 export HISTCONTROL=ignoreboth

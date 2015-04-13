@@ -16,9 +16,6 @@ else
 
 	set -x MAKEFLAGS '-j'(nproc)
 
-	functions -c __pbcopy_x11 pbcopy
-	functions -c __pbpaste_x11 pbpaste
-
 end
 
 set -x fish_greeting ''
