@@ -24,6 +24,10 @@ set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'vim'
 set -x MANPAGER "/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch' -\""
 
+set -x XDG_CONFIG_HOME ~/.config
+set -x XDG_CACHE_HOME ~/.cache
+set -x XDG_DATA_HOME ~/.local/share
+
 set -x ANSIBLE_NOCOWS 1
 
 set -x PATH $PATH $HOME/tools
