@@ -8,12 +8,6 @@ if [[ $(uname -s) = 'Darwin' ]]; then
 
 else
 
-	if [[ ! -n ${TMUX+1} ]]; then
-		if [[ (${COLORTERM} = 'gnome-terminal') || (${COLORTERM} = 'xfce4-terminal') ]]; then
-			export TERM='xterm-256color'
-		fi
-	fi
-
 	export MAKEFLAGS="-j$(nproc)"
 
 	alias pbcopy='xsel -ibk'

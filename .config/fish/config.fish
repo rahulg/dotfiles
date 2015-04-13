@@ -14,12 +14,6 @@ if [ (uname -s) = 'Darwin' ]
 
 else
 
-	if not set -q TMUX
-		if [ $COLORTERM = 'gnome-terminal' -o $COLORTERM = 'xfce4-terminal' ]
-			set -x TERM 'xterm-256color'
-		end
-	end
-
 	set -x MAKEFLAGS '-j'(nproc)
 
 	functions -c __pbcopy_x11 pbcopy
