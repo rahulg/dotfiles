@@ -28,6 +28,8 @@ export PATH="${PATH}:${HOME}/tools"
 
 export PS1='\u@\h \W\\$ '
 
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 # load functions, a la fish
 for func in ~/.config/bash/functions/*; do
 	source ${func}

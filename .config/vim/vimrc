@@ -32,6 +32,21 @@ set nobackup
 set nowb
 set noswapfile
 
+" xdg directory spec
+if empty($XDG_CONFIG_HOME)
+	let $XDG_CONFIG_HOME="$HOME/.config"
+endif
+if empty($XDG_CACHE_HOME)
+	let $XDG_CACHE_HOME="$HOME/.cache"
+endif
+set directory=
+set backupdir=
+set undodir=
+set viminfo+=n$XDG_CACHE_HOME/vim/info
+set runtimepath^=$XDG_CONFIG_HOME/vim
+set runtimepath+=$XDG_CONFIG_HOME/vim/after
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
 map <c-n> :tabn<CR>
 map <c-t> :Te<CR>
 map <c-f> :Ex<CR>
@@ -56,12 +71,11 @@ autocmd Filetype yaml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " vundle init
-set nocompatible
 filetype off
 set shell=/bin/bash
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
+call vundle#begin("$XDG_DATA_HOME/vim/bundle")
 
 Plugin 'gmarik/Vundle.vim'
 
