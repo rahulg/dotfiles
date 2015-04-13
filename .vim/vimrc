@@ -38,10 +38,9 @@ map <c-f> :Ex<CR>
 
 syntax enable
 
-let os = substitute(system('uname'), "\n", "", "")
-if os == "Linux"
+if has('unnamedplus')
 	set clipboard=unnamedplus
-elseif os == "Darwin"
+else
 	set clipboard=unnamed
 endif
 
