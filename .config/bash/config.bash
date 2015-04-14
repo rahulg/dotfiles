@@ -19,6 +19,8 @@ fi
 export HISTCONTROL=ignoreboth
 export HISTFILE=${XDG_DATA_HOME}/bash/history
 
+export PS1='\u@\h \W\\$ '
+
 export LANG='en_GB.UTF-8'
 export EDITOR='vim'
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable' -\""
@@ -26,8 +28,6 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod 
 export ANSIBLE_NOCOWS=1
 
 export PATH="${PATH}:${HOME}/tools"
-
-export PS1='\u@\h \W\\$ '
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
