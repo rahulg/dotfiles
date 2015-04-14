@@ -103,7 +103,7 @@ set laststatus=2
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'majutsushi/tagbar'
-nmap <F7> :TagbarToggle<CR>
+nmap <F6> :TagbarToggle<CR>
 Plugin 'tpope/vim-surround'
 
 " vundle end
