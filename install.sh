@@ -11,8 +11,7 @@ echo "Copying…"
 rsync -av \
 	--exclude='.git' \
 	--exclude='install.sh' \
-	--exclude='.config/fish/local.fish' \
-	--exclude='.config/bash/local.bash' \
+	--exclude='LICENSE' \
 	. ~
 
 if [[ $(uname -s) == "Darwin" ]]; then
