@@ -1,3 +1,7 @@
+export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
+
 if [[ $(uname -s) = 'Darwin' ]]; then
 
 	export MAKEFLAGS="-j$(sysctl -n hw.ncpu)"
@@ -17,10 +21,6 @@ export HISTCONTROL=ignoreboth
 export LANG='en_GB.UTF-8'
 export EDITOR='vim'
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable' -\""
-
-export XDG_CONFIG_HOME=~/.config
-export XDG_CACHE_HOME=~/.cache
-export XDG_DATA_HOME=~/.local/share
 
 export ANSIBLE_NOCOWS=1
 
