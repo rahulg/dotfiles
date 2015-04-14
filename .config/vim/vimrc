@@ -6,7 +6,6 @@ set hlsearch
 set smartcase
 set ignorecase
 set incsearch
-set nohlsearch
 
 set autoindent
 set cindent
