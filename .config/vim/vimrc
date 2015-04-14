@@ -72,6 +72,7 @@ if &term =~ '^screen'
 endif
 
 nmap <c-t> :tabnew<cr>
+nmap <c-k> :tabclose<cr>
 nmap <c-f> :ed .<cr>
 nnoremap <c-left> :tabprev<cr>
 nnoremap <c-right> :tabnext<cr>
