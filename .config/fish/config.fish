@@ -32,6 +32,8 @@ set -x ANSIBLE_NOCOWS 1
 
 set -x PATH $PATH $HOME/tools
 
+set -x GOPATH $HOME/scratch/go
+
 set -x VIMINIT 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 set __fish_git_prompt_showdirtystate 'yes'

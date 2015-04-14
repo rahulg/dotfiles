@@ -29,6 +29,8 @@ export ANSIBLE_NOCOWS=1
 
 export PATH="${PATH}:${HOME}/tools"
 
+export GOPATH="${HOME}/scratch/go"
+
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 # load functions, a la fish
