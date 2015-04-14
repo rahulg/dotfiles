@@ -17,6 +17,7 @@ else
 fi
 
 export HISTCONTROL=ignoreboth
+export HISTFILE=${XDG_DATA_HOME}/bash/history
 
 export LANG='en_GB.UTF-8'
 export EDITOR='vim'
