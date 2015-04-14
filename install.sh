@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -u
+
 if [[ $(dirname $0) != '.' ]]; then
 	echo "Run this from the directory it's in."
 	exit 1
@@ -13,7 +15,7 @@ rsync -av \
 	--exclude='.config/bash/local.bash' \
 	. ~
 
-echo "Linking…"
 if [[ $(uname -s) == "Darwin" ]]; then
+	echo "Linking…"
 	ln -vfs ~/.DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 fi
