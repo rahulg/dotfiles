@@ -17,5 +17,5 @@ rsync -av \
 
 if [[ $(uname -s) == "Darwin" ]]; then
 	echo "Linking…"
-	ln -vfs ~/.DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+	ln -vfs ~/.config/darwin/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 fi
