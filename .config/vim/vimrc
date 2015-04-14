@@ -62,10 +62,20 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " }}}
 
 " bindings {{{
+
+" tmux xterm-keys handling
+if &term =~ '^screen'
+	execute "set <xUp>=\e[1;*A"
+	execute "set <xDown>=\e[1;*B"
+	execute "set <xRight>=\e[1;*C"
+	execute "set <xLeft>=\e[1;*D"
+endif
+
 nmap <c-t> :tabnew<cr>
 nmap <c-f> :ed .<cr>
 nnoremap <c-left> :tabprev<cr>
 nnoremap <c-right> :tabnext<cr>
+
 " }}}
 
 " language-specific options {{{
