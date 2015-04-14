@@ -112,7 +112,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-surround'
 
 " lanugage support, auto-formatting, linting, etc.
-Plug 'dag/vim-fish'
+Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
 	autocmd FileType fish setlocal foldmethod=expr
