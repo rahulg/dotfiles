@@ -13,8 +13,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
+set autowrite
 set autochdir
-set autowriteall
 
 set modeline
 
