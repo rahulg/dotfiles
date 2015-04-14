@@ -62,9 +62,10 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " }}}
 
 " bindings {{{
-map <c-n> :tabn<CR>
-map <c-t> :Te<CR>
-map <c-f> :Ex<CR>
+nmap <c-t> :tabnew<cr>
+nmap <c-f> :ed .<cr>
+nnoremap <c-left> :tabprev<cr>
+nnoremap <c-right> :tabnext<cr>
 " }}}
 
 " language-specific options {{{
@@ -103,7 +104,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYouCompleteMe') }
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-	nmap <F6> :TagbarToggle<CR>
+	nmap <F6> :TagbarToggle<cr>
 Plug 'tpope/vim-surround'
 
 " lanugage support, auto-formatting, linting, etc.
