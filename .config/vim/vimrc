@@ -93,12 +93,13 @@ if empty(glob("$XDG_DATA_HOME/vim/autoload/plug.vim"))
 	autocmd VimEnter * PlugInstall
 endif
 
-" post-{install,update} hooks
+" post-{install,update} hooks {{{
 function! BuildYouCompleteMe(info)
 	if a:info.status == 'installed' || a:info.force
 		!./install.sh --clang-completer
 	endif
 endfunction
+" }}}
 
 call plug#begin("$XDG_DATA_HOME/vim/bundle")
 
