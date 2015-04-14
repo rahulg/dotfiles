@@ -3,8 +3,8 @@ set nowrap
 set showmatch
 
 set hlsearch
-set smartcase
 set ignorecase
+set smartcase
 set incsearch
 
 set autoindent
