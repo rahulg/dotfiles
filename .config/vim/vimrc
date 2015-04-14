@@ -102,8 +102,8 @@ endfunction
 " }}}
 
 call plug#begin("$XDG_DATA_HOME/vim/bundle")
-
 let g:plug_timeout=120
+let g:plug_window='tabnew'
 
 " navigation
 Plug 'tpope/vim-rsi'
