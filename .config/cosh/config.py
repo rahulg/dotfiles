@@ -22,7 +22,7 @@ else:
     ncpu = run('nproc')
     env.MAKEFLAGS = '-j' + ncpu
 
-env.path_p('~/tools')
+env.path_p(var('HOME') + '/tools')
 
 if shell is Fish:
 
