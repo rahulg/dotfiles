@@ -4,7 +4,7 @@
 
 OSNAME := $(shell uname)
 
-TARGETS=sync
+TARGETS=sync $(HOME)/tools/cosh
 ifeq ($(OSNAME),Darwin)
 	TARGETS+= darwin-link
 endif
@@ -20,3 +20,7 @@ sync:
 
 darwin-link:
 	ln -fs ~/.config/darwin/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+$(HOME)/tools/cosh:
+	curl -fsSL https://raw.githubusercontent.com/rahulg/cosh/master/cosh -o $@
+	chmod 0755 $@
