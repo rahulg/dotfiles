@@ -4,13 +4,12 @@
 
 OSNAME := $(shell uname)
 
+TARGETS=sync
 ifeq ($(OSNAME),Darwin)
-	TARGETS=darwin-link
-else
-	TARGETS=
+	TARGETS+= darwin-link
 endif
 
-all: sync $(TARGETS)
+all: $(TARGETS)
 
 sync:
 	rsync -av \
