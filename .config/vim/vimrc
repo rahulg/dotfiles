@@ -81,12 +81,6 @@ nnoremap <c-right> :tabnext<cr>
 
 " }}}
 
-" language-specific options {{{
-autocmd Filetype python setl expandtab
-autocmd Filetype yaml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-" }}}
-
 " plugins {{{
 
 " automatically install plug.vim
