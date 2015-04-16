@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-set -e
-set -u
+set -e -u
 
 declare -A alerts=(
 		["0"]="close_notify"

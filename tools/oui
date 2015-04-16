@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e -u
 curl "http://oui.rahul.ag/${1}"

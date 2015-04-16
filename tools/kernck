@@ -1,7 +1,5 @@
-#!/bin/bash
-
-set -e
-set -u
+#!/usr/bin/env bash
+set -e -u
 
 KFILE=${KERN:-/boot/vmlinuz-linux}
 

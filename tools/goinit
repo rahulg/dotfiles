@@ -1,7 +1,5 @@
-#!/bin/bash
-
-set -e
-set -u
+#!/usr/bin/env bash
+set -e -u
 
 if [ $# -ne 1 ]; then
 	echo "Usage: $(basename "${0}") <project>"
