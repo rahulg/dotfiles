@@ -1,3 +1,0 @@
-digs() {
-	dig +short ${@}
-}

@@ -24,6 +24,8 @@ else:
 
 env.path_p(var('HOME') + '/tools')
 
+env.digs = Alias('dig +short')
+
 if shell is Fish:
 
     if 'Apple_PubSub_Socket_Render' in env:
