@@ -30,6 +30,8 @@ set nobackup
 set noswapfile
 set writebackup
 
+set wildmenu
+
 syntax enable
 
 if has('unnamedplus')
