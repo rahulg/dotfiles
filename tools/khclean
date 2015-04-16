@@ -2,8 +2,10 @@
 
 # Cleans up your known_hosts file.
 
-import os.path
+import os
 import re
+import shutil
+
 from collections import defaultdict
 
 # The following matches xxx.xxx.xxx.xxx IPs
@@ -11,29 +13,37 @@ from collections import defaultdict
 # The following matches xxx.xxx.xxx.xxx as well as [xxx.xxx.xxx.xxx]:yyy
 ip_re = re.compile(r'^\[?(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)(\]:\d+)?$')
 
+khfile = os.path.expanduser('~/.ssh/known_hosts')
+khsortedfile = os.path.expanduser('~/.ssh/known_hosts_sorted')
+
 key_dct = defaultdict(set)
 
-for line in open(os.path.expanduser('~/.ssh/known_hosts'), 'r'):
+for line in open(khfile, 'r'):
     line = line.rstrip('\n')
     l = line.split(' ')
     if len(l) != 3:
-        raise ValueError('Panic! I have no clue what this known_hosts format is D:')
+        raise ValueError('Unknown host_keys format')
 
     k = '%s %s' % (l[1], l[2])
-    
+
     key_dct[k].update(l[0].split(','))
 
 host_keys = []
 
 for k, v in key_dct.items():
     # sort names, and stick all the IPs at the end of the list
-    names = sorted(list(v), key=lambda n: '\xff' + n if ip_re.match(n) else '\x01' + n)
+    names = sorted(
+        list(v),
+        key=lambda n: '\xff' + n if ip_re.match(n) else '\x01' + n
+    )
     host_keys.append('%s %s' % (','.join(names), k))
 
 # sort lines
 host_keys.sort()
 
-with open(os.path.expanduser('~/.ssh/known_hosts'), 'w') as khf:
+with open(khsortedfile, 'w') as khf:
     for hk in host_keys:
         khf.write('%s\n' % hk)
 
+shutil.copyfile(khsortedfile, khfile)
+os.remove(khsortedfile)
