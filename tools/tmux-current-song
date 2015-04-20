@@ -5,29 +5,25 @@ if [[ -x $( which playerctl ) ]]; then
 		echo "🎵 $( playerctl metadata 'xesam:title' ) ($( playerctl metadata 'xesam:artist' )) | "
 elif [[ -x $( which osascript ) ]]; then
 	osascript <<EOF
-	global track_name, artist_name, is_playing
-	set is_playing to false
-	tell application "iTunes"
-		if it is running then
-			if player state is playing then
-				set is_playing to true
-				set track_name to name of current track
-				set artist_name to artist of current track
-			end if
-		end if
-	end tell
-	tell application "Spotify"
-		if it is running then
-			if player state is playing then
-				set is_playing to true
-				set track_name to name of current track
-				set artist_name to artist of current track
-			end if
-		end if
-	end tell
-	if is_playing then
-		set output to ("🎵 " & track_name & " (" & artist_name & ") | ")
-		do shell script "echo " & quoted form of output
-	end if
+	set musicApps to {"com.spotify.client", "com.apple.iTunes"}
+
+	do shell script "echo " & quoted form of (getTrackInfo from musicApps)
+
+	to getTrackInfo from musicAppList
+		repeat with musicApp in musicAppList
+			using terms from application "iTunes"
+				try
+					tell application id musicApp
+						if it is running and player state is playing then
+							set track_name to name of current track
+							set artist_name to artist of current track
+							return ("🎵 " & track_name & " (" & artist_name & ") | ")
+						end if
+					end tell
+				end try
+			end using terms from
+		end repeat
+		return ""
+	end getTrackInfo
 EOF
 fi
