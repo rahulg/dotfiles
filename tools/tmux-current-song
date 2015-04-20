@@ -2,7 +2,7 @@
 set -e -u
 if [[ -x $( which playerctl ) ]]; then
 	[[ $( playerctl status ) == Playing ]] && \
-		echo "🎵 $( playerctl metadata 'xesam:title' ) ($( playerctl metadata 'xesam:artist' )) | "
+		echo "♪ $( playerctl metadata 'xesam:title' ) ($( playerctl metadata 'xesam:artist' )) | "
 elif [[ -x $( which osascript ) ]]; then
 	osascript <<EOF
 	set musicApps to {"com.spotify.client", "com.apple.iTunes"}
@@ -17,7 +17,7 @@ elif [[ -x $( which osascript ) ]]; then
 						if it is running and player state is playing then
 							set track_name to name of current track
 							set artist_name to artist of current track
-							return ("🎵 " & track_name & " (" & artist_name & ") | ")
+							return ("♪ " & track_name & " (" & artist_name & ") | ")
 						end if
 					end tell
 				end try
