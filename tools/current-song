@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e -u
+[[ ! -x $( which playerctl ) ]] && exit 0
+[[ $( playerctl status ) != Playing ]] && exit 0
+echo "🎵 $( playerctl metadata 'xesam:title' ) ($( playerctl metadata 'xesam:artist' )) | "
