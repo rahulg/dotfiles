@@ -40,7 +40,7 @@ else
 	set clipboard=unnamed
 endif
 
-if has("mouse")
+if has('mouse')
 	set mouse=a
 endif
 
@@ -53,10 +53,10 @@ set shell=/bin/bash
 
 " XDG directory spec {{{
 if empty($XDG_CONFIG_HOME)
-	let $XDG_CONFIG_HOME="$HOME/.config"
+	let $XDG_CONFIG_HOME='$HOME/.config'
 endif
 if empty($XDG_CACHE_HOME)
-	let $XDG_CACHE_HOME="$HOME/.cache"
+	let $XDG_CACHE_HOME='$HOME/.cache'
 endif
 set directory=$XDG_CACHE_HOME/vim/swap,/var/tmp,/tmp
 set backupdir=$XDG_CACHE_HOME/vim/backup,/tmp
@@ -64,17 +64,17 @@ set undodir=$XDG_CACHE_HOME/vim/undo
 set viminfo+=n$XDG_CACHE_HOME/vim/info
 set runtimepath^=$XDG_CONFIG_HOME/vim,$XDG_DATA_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim/after,$XDG_CONFIG_HOME/vim/after
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+let $MYVIMRC='$XDG_CONFIG_HOME/vim/vimrc'
 " }}}
 
 " bindings {{{
 
 " tmux xterm-keys handling
 if &term =~ '^screen'
-	execute "set <xUp>=\e[1;*A"
-	execute "set <xDown>=\e[1;*B"
-	execute "set <xRight>=\e[1;*C"
-	execute "set <xLeft>=\e[1;*D"
+	execute 'set <xUp>=\e[1;*A'
+	execute 'set <xDown>=\e[1;*B'
+	execute 'set <xRight>=\e[1;*C'
+	execute 'set <xLeft>=\e[1;*D'
 endif
 
 nmap <c-t> :tabnew<cr>
@@ -88,13 +88,13 @@ nnoremap <c-right> :tabnext<cr>
 " plugins {{{
 
 " automatically install plug.vim
-if empty(glob("$XDG_DATA_HOME/vim/autoload/plug.vim"))
+if empty(glob('$XDG_DATA_HOME/vim/autoload/plug.vim'))
 	silent !curl -fLo $XDG_DATA_HOME/vim/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin("$XDG_DATA_HOME/vim/bundle")
+call plug#begin('$XDG_DATA_HOME/vim/bundle')
 let g:plug_timeout=120
 let g:plug_window='tabnew'
 
