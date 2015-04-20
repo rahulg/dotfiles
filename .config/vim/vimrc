@@ -44,6 +44,10 @@ if has("mouse")
 	set mouse=a
 endif
 
+if &ttymouse == 'xterm'
+	set ttymouse=xterm2
+endif
+
 set shell=/bin/bash
 " }}}
 
