@@ -19,6 +19,7 @@ sync:
 	. ~
 
 darwin-link:
+	mkdir -p ~/Library/KeyBindings/
 	ln -fs ~/.config/darwin/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 
 $(HOME)/tools/cosh:
