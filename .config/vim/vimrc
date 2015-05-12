@@ -110,6 +110,8 @@ Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	nmap <F6> :TagbarToggle<cr>
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
 
 " lanugage support, auto-formatting, linting, etc.
 Plug 'kballard/vim-fish'
