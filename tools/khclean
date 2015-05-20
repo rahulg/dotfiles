@@ -8,10 +8,9 @@ import shutil
 
 from collections import defaultdict
 
-# The following matches xxx.xxx.xxx.xxx IPs
-# ip_re = re.compile(r'^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$')
-# The following matches xxx.xxx.xxx.xxx as well as [xxx.xxx.xxx.xxx]:yyy
-ip_re = re.compile(r'^\[?(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)(\]:\d+)?$')
+ip_re = re.compile(
+    r'^\[?(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)(\]:\d+)?$'
+)
 
 khfile = os.path.expanduser('~/.ssh/known_hosts')
 khsortedfile = os.path.expanduser('~/.ssh/known_hosts_sorted')

@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e -u
+if [[ -x $( which playerctl ) && $( playerctl status ) == Playing ]]; then
+	echo "♪ $( playerctl metadata 'xesam:title' ) ($( playerctl metadata 'xesam:artist' )) | "
+elif [[ -x $( which osascript ) ]]; then
+	$( dirname ${BASH_SOURCE[0]} )/__tmux_current_song_os_x
+fi
