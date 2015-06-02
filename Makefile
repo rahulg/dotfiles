@@ -2,6 +2,12 @@
 
 .PHONY: all sync vim-plugs
 
+FORCEINSTALL ?= no
+
+ifeq ($(FORCEINSTALL), yes)
+	PLUGUPDATE := !
+endif
+
 TARGETS=sync vim-plugs $(HOME)/tools/cosh
 
 all: $(TARGETS)
@@ -14,7 +20,7 @@ sync:
 	. ~
 
 vim-plugs:
-	vim +PlugUpgrade +PlugUpdate! +qall
+	vim +PlugUpgrade +PlugUpdate$(PLUGUPDATE) +qall
 
 $(HOME)/tools/cosh:
 	curl -fsSL https://raw.githubusercontent.com/rahulg/cosh/master/cosh -o $@
