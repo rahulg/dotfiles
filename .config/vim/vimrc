@@ -30,7 +30,10 @@ set nobackup
 set noswapfile
 set writebackup
 
+set shortmess+=I
+
 set wildmenu
+set wildmode=longest,full
 
 syntax enable
 
@@ -82,6 +85,9 @@ nmap <c-k> :tabclose<cr>
 nmap <c-f> :ed .<cr>
 nnoremap <c-left> :tabprev<cr>
 nnoremap <c-right> :tabnext<cr>
+nnoremap <F1> <nop>
+inoremap <F1> <nop>
+nnoremap Q <nop>
 
 " }}}
 
