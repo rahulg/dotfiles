@@ -119,7 +119,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 
-" lanugage support, auto-formatting, linting, etc.
+" language support, auto-formatting, linting, etc.
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
