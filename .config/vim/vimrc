@@ -46,8 +46,12 @@ if has('mouse')
 	set mouse=a
 endif
 
-if &ttymouse == 'xterm'
-	set ttymouse=xterm2
+if has('ttymouse')
+	if has('mouse_sgr')
+		set ttymouse=sgr
+	else
+		set ttymouse=xterm2
+	endif
 endif
 
 set shell=/bin/bash
