@@ -5,7 +5,6 @@ set number
 set nowrap
 set showmatch
 
-set hlsearch
 set ignorecase
 set smartcase
 set incsearch
@@ -80,9 +79,7 @@ if &term =~ '^screen'
 	execute 'set <xLeft>=\e[1;*D'
 endif
 
-nmap <c-t> :tabnew<cr>
-nmap <c-k> :tabclose<cr>
-nmap <c-f> :ed .<cr>
+nnoremap <c-t> :tabnew<cr>
 nnoremap <c-left> :tabprev<cr>
 nnoremap <c-right> :tabnext<cr>
 nnoremap <F1> <nop>
