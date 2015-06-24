@@ -1,16 +1,19 @@
-" vim: foldmethod=marker foldlevel=0
+" vim: foldmethod=marker foldmarker={,} foldlevel=0
 
-" options {{{
+" options {
+
+if !has('nvim')
+	set nocompatible
+endif
+
 set number
 set nowrap
 set showmatch
 
 set ignorecase
 set smartcase
-set incsearch
 
 set noexpandtab
-set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -19,9 +22,6 @@ set autowrite
 set autochdir
 
 set modeline
-
-set undolevels=1000
-set backspace=indent,eol,start
 
 set lazyredraw
 
@@ -33,9 +33,6 @@ set shortmess+=I
 
 set noshowmode
 
-set wildmenu
-set wildmode=longest,full
-
 syntax enable
 
 if has('unnamedplus')
@@ -44,22 +41,37 @@ else
 	set clipboard=unnamed
 endif
 
-if has('mouse')
-	set mouse=a
-endif
+" defaults for vanilla vim
+if !has('nvim')
 
-if has('ttymouse')
+	set backspace=indent,eol,start
+	set incsearch
+	set smarttab
+	set wildmenu
+	set wildmode=longest,full
+
+	if has('mouse')
+		set mouse=a
+	endif
+
 	if has('mouse_sgr')
 		set ttymouse=sgr
 	else
 		set ttymouse=xterm2
 	endif
+
 endif
 
-set shell=/bin/bash
-" }}}
+" vim < 7.4.276 don't have support for fish
+if v:version < 704
+	\ || (v:version == 704 && !has('patch276'))
+	set shell=/bin/bash
+endif
 
-" XDG directory spec {{{
+" }
+
+" XDG directory spec {
+
 if empty($XDG_CONFIG_HOME)
 	let $XDG_CONFIG_HOME='$HOME/.config'
 endif
@@ -73,9 +85,10 @@ set viminfo+=n$XDG_CACHE_HOME/vim/info
 set runtimepath^=$XDG_CONFIG_HOME/vim,$XDG_DATA_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim/after,$XDG_CONFIG_HOME/vim/after
 let $MYVIMRC='$XDG_CONFIG_HOME/vim/vimrc'
-" }}}
 
-" bindings {{{
+" }
+
+" bindings {
 
 nnoremap <c-t> :tabnew<cr>
 nnoremap <c-left> :tabprev<cr>
@@ -84,9 +97,9 @@ nnoremap <F1> <nop>
 inoremap <F1> <nop>
 nnoremap Q <nop>
 
-" }}}
+" }
 
-" plugins {{{
+" plugins {
 
 " automatically install plug.vim
 if empty(glob('$XDG_DATA_HOME/vim/autoload/plug.vim'))
@@ -139,4 +152,4 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 filetype plugin indent on
 
-" }}}
+" }
