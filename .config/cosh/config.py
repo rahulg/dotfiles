@@ -26,8 +26,6 @@ env.path_p(var('HOME') + '/tools')
 
 env.digs = Alias('dig +short')
 
-env.sshofs = Alias('ssh -oProxyCommand=\'ssh -q fw3.ofs.edu.sg -p 778 nc %h %p\'')
-
 if shell is Fish:
 
     if 'Apple_PubSub_Socket_Render' in env:
