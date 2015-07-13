@@ -3,7 +3,7 @@ function tmux -d 'tmux config selection wrapper'
 	if [ (uname -s) = 'Darwin' ]
 		set tmconf osx.conf
 	else if [ (uname -s) = 'Linux' ] 
-		if set -q DISPLAY
+		if set -q DISPLAY; and test $XDG_SESSION_TYPE = 'x11'
 			set tmconf x11.conf
 		end
 	end
