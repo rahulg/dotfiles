@@ -24,7 +24,7 @@ else:
 
 env.path_p(var('HOME') + '/tools')
 
-env.digs = Alias('dig +short')
+env.digs = Abbr('dig +short')
 
 if shell is Fish:
 
