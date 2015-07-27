@@ -55,7 +55,7 @@ if shell is Fish:
     end
     ''')
 
-if shell is Posix:
+elif shell is Posix:
 
     env.HISTCONTROL = 'ignoreboth'
     env.HISTFILE = dq(var('XDG_DATA_HOME') + '/bash/history')
