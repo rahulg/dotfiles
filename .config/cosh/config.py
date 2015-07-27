@@ -22,6 +22,8 @@ else:
     ncpu = run('nproc')
     env.MAKEFLAGS = '-j' + ncpu
 
+env.path_p('/usr/local/sbin')
+env.path_p('/usr/local/bin')
 env.path_p(var('HOME') + '/tools')
 
 env.digs = Abbr('dig +short')
