@@ -51,6 +51,7 @@ if has('nvim')
 else
 
 	" nvim doesn't require these
+	set nrformats-=octal
 	set backspace=indent,eol,start
 	set incsearch
 	set smarttab
