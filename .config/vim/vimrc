@@ -31,6 +31,13 @@ set writebackup
 
 set shortmess+=I
 
+" vim > 7.3.541 have 'j'
+" 'j' strips leading comment chars when merging lines
+if v:version > 703
+	\ || (v:version == 703 && has('patch541'))
+	set formatoptions+=j
+endif
+
 set noshowmode
 
 syntax enable
