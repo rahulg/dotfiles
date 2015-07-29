@@ -1,8 +1,6 @@
 [user]
 	name = Rahul AG
 	email = r@hul.ag
-[core]
-	excludesfile = ~/.gitignore
 [color]
 	diff = always
 	ui = always
