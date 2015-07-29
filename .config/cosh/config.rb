@@ -6,8 +6,6 @@ var LANG, 'en_GB.UTF-8'
 var EDITOR, 'vim'
 var MANPAGER, dq('/bin/sh -c "col -b | vim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"')
 
-var ANSIBLE_NOCOWS, 1
-
 var GOPATH, "#{env.HOME}/scratch/go"
 
 var VIMINIT, 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

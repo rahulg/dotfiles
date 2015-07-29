@@ -6,8 +6,6 @@ env.LANG = 'en_GB.UTF-8'
 env.EDITOR = 'vim'
 env.MANPAGER = dq('/bin/sh -c "col -b | vim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"')
 
-env.ANSIBLE_NOCOWS = 1
-
 env.GOPATH = env.HOME + '/scratch/go'
 
 env.VIMINIT = 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
