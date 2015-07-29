@@ -14,5 +14,4 @@
 	co = checkout
 	br = branch
 	pl = pull --rebase
-	bra = branch -a
 	lst = ls-tree --name-only -r HEAD
