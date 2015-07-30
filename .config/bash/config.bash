@@ -1,1 +1,1 @@
-source <(~/tools/cosh --shell bash ~/.config/cosh/config.py)
+source <(/usr/local/bin/cosh --shell bash ~/.config/cosh/config.py)
