@@ -1,1 +1,1 @@
-source (/usr/local/bin/cosh --shell fish ~/.config/cosh/config.py | psub)
+source (/usr/local/bin/cosh --shell fish ~/.config/cosh/config.rb | psub)
