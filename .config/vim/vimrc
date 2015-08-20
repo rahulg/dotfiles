@@ -6,6 +6,10 @@ if !has('nvim')
 	set nocompatible
 endif
 
+syntax enable
+
+set noshowmode
+
 set number
 set nowrap
 set showmatch
@@ -38,10 +42,6 @@ if v:version > 703
 	set formatoptions+=j
 endif
 
-set noshowmode
-
-syntax enable
-
 if has('unnamedplus')
 	set clipboard=unnamedplus
 else
@@ -49,13 +49,17 @@ else
 endif
 
 if has('nvim')
-
 	if empty('$TMUX')
 		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 	endif
 	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+endif
 
-else
+" }
+
+" compatibility {
+
+if !has('nvim')
 
 	" nvim doesn't require these
 	set nrformats-=octal
