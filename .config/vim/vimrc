@@ -134,7 +134,6 @@ Plug 'tpope/vim-unimpaired'
 " utilities
 Plug 'itchyny/lightline.vim'
 	set laststatus=2
-Plug 'Valloric/YouCompleteMe', { 'do': function('setup#BuildYouCompleteMe') }
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	nmap <F6> :TagbarToggle<cr>
@@ -143,11 +142,12 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 
 " language support, auto-formatting, linting, etc.
+Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe') }
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
 	autocmd FileType fish setlocal foldmethod=expr
-Plug 'fatih/vim-go', { 'do': function('setup#BuildVimGo') }
+Plug 'fatih/vim-go', { 'do': function('plug_setup#BuildVimGo') }
 Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
