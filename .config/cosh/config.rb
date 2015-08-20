@@ -24,7 +24,6 @@ var MAKEFLAGS, "-j#{ncpu}"
 abbr digs, 'dig +short'
 
 if shell == :fish
-
   if env.to_h.key? 'Apple_PubSub_Socket_Render'
     puts 'bind \e\[5D prevd-or-backward-word'
     puts 'bind \e\[5C nextd-or-forward-word'
@@ -45,27 +44,16 @@ if shell == :fish
   lvar __fish_git_prompt_char_upstream_equal, '.'
   lvar __fish_git_prompt_char_upstream_diverged, 'X'
 
-  puts <<-END.gsub(/^ {4}/, '')
-    if [ -f ~/.config/fish/local.fish ]
-      source ~/.config/fish/local.fish
-    end
-  END
-
+  source "#{Dir.home}/.config/fish/local.fish"
 elsif shell == :posix
-
   var HISTCONTROL, 'ignoreboth'
   var HISTFILE, "#{env.XDG_DATA_HOME}/bash/history"
 
   var PS1, '\u@\h \W\\$ '
 
-  puts <<-END.gsub(/^ {4}/, '')
-    for func in ~/.config/bash/functions/*; do
-      source ${func}
-    done
+  Dir["#{Dir.home}/.config/bash/functions/*.bash"].each do |func|
+    source func
+  end
 
-    if [[ -f ~/.config/bash/local.bash ]]; then
-      source ~/.config/bash/local.bash
-    fi
-  END
-
+  source "#{Dir.home}/.config/bash/local.bash"
 end
