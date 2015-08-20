@@ -116,6 +116,8 @@ nnoremap <F1> <nop>
 inoremap <F1> <nop>
 nnoremap Q <nop>
 
+nmap <F2> :call nonprint#toggle()<cr>
+
 " }
 
 " plugins {
