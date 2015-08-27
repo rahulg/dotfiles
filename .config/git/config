@@ -14,5 +14,5 @@
 	ci = commit
 	co = checkout
 	br = branch
-	pl = pull --rebase
 	lst = ls-tree --name-only -r HEAD
+	graph = log --all --graph --decorate --oneline
