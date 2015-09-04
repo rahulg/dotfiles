@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+
+import datetime
+import os.path
+import re
+import subprocess
+import sys
+
+from collections import defaultdict
+
+
+handlers = defaultdict(dict)
+
+
+def osdependent(f):
+    os, fname = f.__name__.split('_')
+    handlers[fname][os] = f
+    return f
+
+
+def oscommon(f):
+    handlers[f.__name__] = defaultdict(lambda: f)
+
+
+def call(fname, *args, **kwargs):
+    os = sys.platform
+    return handlers[fname][os](*args, **kwargs)
+
+
+def run(*cmd):
+    try:
+        return subprocess.check_output(cmd, universal_newlines=True)
+    except subprocess.CalledProcessError:
+        return None
+
+
+@osdependent
+def darwin_battery():
+    pmset = run('pmset', '-g', 'batt')
+    cap = re.findall(r'[0-9]+%', pmset)[0]
+    return cap
+
+
+@osdependent
+def linux_battery():
+    pass
+
+
+@oscommon
+def date():
+    return datetime.datetime.now().strftime('%H:%M %d-%b-%y')
+
+
+@oscommon
+def status_right():
+    status_elem = [
+        call('battery'),
+        call('date'),
+    ]
+
+    status = ' {} '.format(
+        ' | '.join(filter(None, status_elem))
+    )
+
+    print(status, end='')
+
+
+def usage():
+    print('{} {}'.format(
+        os.path.basename(__file__),
+        '|'.join(handlers.keys()),
+    ))
+
+
+try:
+    rv = call(sys.argv[1])
+    if rv:
+        print(rv)
+except (IndexError, KeyError):
+    usage()
