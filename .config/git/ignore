@@ -18,3 +18,7 @@ venv2
 venv3
 venvpy
 __pycache__
+
+# Ruby
+.bundle
+.gems
