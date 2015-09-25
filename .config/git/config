@@ -15,4 +15,5 @@
 	co = checkout
 	br = branch
 	lst = ls-tree --name-only -r HEAD
+	yolo = push --force-with-lease
 	graph = log --all --graph --decorate --oneline
