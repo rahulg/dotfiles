@@ -169,6 +169,7 @@ Plug 'rhysd/vim-clang-format'
 	let g:clang_format#auto_formatexpr = 1
 Plug 'nvie/vim-flake8'
 Plug 'rust-lang/rust.vim'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 filetype plugin indent on
