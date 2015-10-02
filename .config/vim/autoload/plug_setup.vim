@@ -2,7 +2,7 @@
 
 function! plug_setup#BuildYouCompleteMe(info)
 	if a:info.status == 'installed' || a:info.force
-		!./install.sh --clang-completer --gocode-completer
+		!./install.py --clang-completer --system-libclang --gocode-completer --system-boost
 	endif
 endfunction
 
