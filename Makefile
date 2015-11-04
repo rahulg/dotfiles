@@ -1,14 +1,8 @@
 .NOTPARALLEL:
 
-.PHONY: all sync vim-plugs
+.PHONY: all sync
 
-FORCEINSTALL ?= no
-
-ifeq ($(FORCEINSTALL), yes)
-	PLUGUPDATE := !
-endif
-
-TARGETS=sync vim-plugs $(HOME)/tools/cosh
+TARGETS=sync $(HOME)/tools/cosh
 
 all: $(TARGETS)
 
@@ -18,9 +12,6 @@ sync:
 	--exclude='Makefile' \
 	--exclude='LICENSE' \
 	. ~
-
-vim-plugs:
-	vim +PlugUpgrade +PlugUpdate$(PLUGUPDATE) +qall
 
 $(HOME)/tools/cosh:
 	curl -fsSL https://raw.githubusercontent.com/rahulg/cosh/master/cosh -o $@

@@ -10,8 +10,6 @@ var GOPATH, "#{env.HOME}/scratch/go"
 
 prefix PATH, "#{env.HOME}/tools", '/usr/local/bin', '/usr/local/sbin'
 
-shalias VIM, 'vim -u $XDG_CONFIG_HOME/vim/vimrc'
-
 if Platform.darwin?
   ncpu = run 'sysctl -n hw.ncpu'
   suffix PATH, '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources'
