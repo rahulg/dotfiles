@@ -2,8 +2,6 @@
 
 " options {
 
-set nocompatible
-
 syntax enable
 
 set noshowmode
@@ -33,64 +31,12 @@ set writebackup
 
 set shortmess+=I
 
-" vim > 7.3.541 have 'j'
-" 'j' strips leading comment chars when merging lines
-if v:version > 703
-	\ || (v:version == 703 && has('patch541'))
-	set formatoptions+=j
-endif
+set formatoptions+=j
 
-if has('unnamedplus')
-	set clipboard=unnamedplus
-else
-	set clipboard=unnamed
-endif
+set clipboard=unnamed
 
-" }
-
-" compatibility {
-
-" nvim doesn't require these
-set nrformats-=octal
-set backspace=indent,eol,start
-set incsearch
-set smarttab
-set wildmenu
-set wildmode=longest,full
-
-if has('mouse')
-	set mouse=a
-endif
-
-if has('mouse_sgr')
-	set ttymouse=sgr
-else
-	set ttymouse=xterm2
-endif
-
-" vim < 7.4.276 don't have support for fish
-if v:version < 704
-	\ || (v:version == 704 && !has('patch276'))
-	set shell=/bin/bash
-endif
-
-" }
-
-" XDG directory spec {
-
-if empty($XDG_CONFIG_HOME)
-	let $XDG_CONFIG_HOME='$HOME/.config'
-endif
-if empty($XDG_CACHE_HOME)
-	let $XDG_CACHE_HOME='$HOME/.cache'
-endif
-set directory=$XDG_CACHE_HOME/vim/swap,/var/tmp,/tmp
-set backupdir=$XDG_CACHE_HOME/vim/backup,/tmp
-set undodir=$XDG_CACHE_HOME/vim/undo
-set viminfo+=n$XDG_CACHE_HOME/vim/info
-set runtimepath^=$XDG_CONFIG_HOME/vim,$XDG_DATA_HOME/vim
-set runtimepath+=$XDG_DATA_HOME/vim/after,$XDG_CONFIG_HOME/vim/after
-let $MYVIMRC='$XDG_CONFIG_HOME/vim/vimrc'
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " }
 
@@ -110,13 +56,13 @@ nmap <F2> :call nonprint#toggle()<cr>
 " plugins {
 
 " automatically install plug.vim
-if empty(glob('$XDG_DATA_HOME/vim/autoload/plug.vim'))
-	silent !curl -fLo $XDG_DATA_HOME/vim/autoload/plug.vim --create-dirs
+if empty(glob('$XDG_DATA_HOME/nvim/site/autoload/plug.vim'))
+	silent !curl -fLo $XDG_DATA_HOME/nvim/site/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin('$XDG_DATA_HOME/vim/bundle')
+call plug#begin('$XDG_DATA_HOME/nvim/site/bundle')
 let g:plug_timeout=120
 let g:plug_window='tabnew'
 

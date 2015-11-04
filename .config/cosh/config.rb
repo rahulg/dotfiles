@@ -8,9 +8,9 @@ var MANPAGER, dq('/bin/sh -c "col -b | vim -c \'set ft=man ts=8 fdm=indent nomod
 
 var GOPATH, "#{env.HOME}/scratch/go"
 
-var VIMINIT, 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-
 prefix PATH, "#{env.HOME}/tools", '/usr/local/bin', '/usr/local/sbin'
+
+shalias VIM, 'vim -u $XDG_CONFIG_HOME/vim/vimrc'
 
 if Platform.darwin?
   ncpu = run 'sysctl -n hw.ncpu'
