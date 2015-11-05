@@ -1,1 +1,38 @@
 source (/usr/local/bin/cosh --shell fish ~/.config/cosh/config.rb | psub)
+
+set fish_color_normal 'normal'
+set fish_color_command '7cafc2'
+set fish_color_quote 'f7ca88'
+set fish_color_redirection 'normal'
+set fish_color_end '7cafc2'
+set fish_color_error 'ab4642'
+set fish_color_param 'ba8baf'
+set fish_color_comment 'b8b8b8'
+set fish_color_match '7cafc2'
+set fish_color_search_match '--background=383838'
+set fish_color_operator '7cafc2'
+set fish_color_escape 'a1b56c'
+set fish_color_cwd 'a1b56c'
+set fish_color_cwd_root 'ab4642'
+set fish_color_autosuggestion '585858'
+set fish_color_valid_path '--underline'
+
+set fish_pager_color_prefix '86c1b9'
+set fish_pager_color_completion 'normal'
+set fish_pager_color_description 'b8b8b8'
+set fish_pager_color_progress '86c1b9'
+
+set fish_greeting ''
+
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showstashstate 'yes'
+set __fish_git_prompt_showupstream 'auto'
+set __fish_git_prompt_showuntrackedfiles 'yes'
+set __fish_git_prompt_color_branch 'yellow'
+
+set __fish_git_prompt_char_dirtystate 'd'
+set __fish_git_prompt_char_stagedstate 's'
+set __fish_git_prompt_char_upstream_ahead '+'
+set __fish_git_prompt_char_upstream_behind '-'
+set __fish_git_prompt_char_upstream_equal '.'
+set __fish_git_prompt_char_upstream_diverged 'X'

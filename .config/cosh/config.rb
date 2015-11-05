@@ -27,21 +27,6 @@ if shell == :fish
     puts 'bind \e\[5C nextd-or-forward-word'
   end
 
-  lvar fish_greeting, ''
-
-  lvar __fish_git_prompt_showdirtystate, 'yes'
-  lvar __fish_git_prompt_showstashstate, 'yes'
-  lvar __fish_git_prompt_showupstream, 'auto'
-  lvar __fish_git_prompt_showuntrackedfiles, 'yes'
-  lvar __fish_git_prompt_color_branch, 'yellow'
-
-  lvar __fish_git_prompt_char_dirtystate, 'd'
-  lvar __fish_git_prompt_char_stagedstate, 's'
-  lvar __fish_git_prompt_char_upstream_ahead, '+'
-  lvar __fish_git_prompt_char_upstream_behind, '-'
-  lvar __fish_git_prompt_char_upstream_equal, '.'
-  lvar __fish_git_prompt_char_upstream_diverged, 'X'
-
   source "#{Dir.home}/.config/fish/local.fish"
 elsif shell == :posix
   var HISTCONTROL, 'ignoreboth'

@@ -35,6 +35,10 @@ set clipboard+=unnamedplus
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+set background=dark
+let base16colorspace=256
+colorscheme base16-default
+
 " }
 
 " bindings {
@@ -68,6 +72,9 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-unimpaired'
 
 " utilities
+let g:lightline = {
+	\ 'colorscheme': 'base16',
+	\ }
 Plug 'itchyny/lightline.vim'
 	set laststatus=2
 Plug 'rking/ag.vim', { 'on': 'Ag' }
