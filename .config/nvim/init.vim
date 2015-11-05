@@ -5,6 +5,7 @@
 syntax enable
 
 set noshowmode
+set modeline
 
 set number
 set nowrap
@@ -21,8 +22,6 @@ set softtabstop=4
 set autowrite
 set autochdir
 
-set modeline
-
 set lazyredraw
 
 set nobackup
@@ -31,9 +30,7 @@ set writebackup
 
 set shortmess+=I
 
-set formatoptions+=j
-
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
