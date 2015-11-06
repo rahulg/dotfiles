@@ -1,1 +1,1 @@
-source <(/usr/local/bin/cosh --shell bash ~/.config/cosh/config.rb)
+source <(guile ~/.config/shell-config/config.ss bash 2>/dev/null)
