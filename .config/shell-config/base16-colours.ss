@@ -30,7 +30,9 @@
   (cond
 	[(getenv "TMUX")
 	 tmux]
-	[(string=? (string-take (getenv "TERM") 6) "screen")
+	[(if (> (string-length (getenv "TERM")) 6)
+	   (string=? (string-take (getenv "TERM") 6) "screen")
+	   #f)
 	 screen]
 	[else
 	  general]))
