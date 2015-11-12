@@ -2,8 +2,7 @@
 	name = Rahul AG
 	email = r@hul.ag
 [color]
-	diff = always
-	ui = always
+	ui = auto
 [help]
 	autocorrect = -1
 [push]
