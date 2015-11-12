@@ -3,6 +3,8 @@
 	email = r@hul.ag
 [color]
 	ui = auto
+[am]
+	threeWay = true
 [help]
 	autocorrect = -1
 [push]
