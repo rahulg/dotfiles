@@ -4,9 +4,9 @@
 ; Place your shell configuration in config.ss
 
 (use-modules (ice-9 popen)
-			 (ice-9 rdelim)
-			 (ice-9 regex)
-			 (ice-9 ftw))
+             (ice-9 rdelim)
+             (ice-9 regex)
+             (ice-9 ftw))
 
 (define (print s)
   (display s)
@@ -14,25 +14,25 @@
 
 (define (run . argv)
   (string-trim-both (let* ((port (open-input-pipe (string-join argv " ")))
-						   (str (read-string port)))
-					  (close-pipe port)
-					  str)))
+                           (str (read-string port)))
+                      (close-pipe port)
+                      str)))
 
 (define (expand-path path)
   (run "echo" path))
 
 (define (absolute-path path)
   (let* ((sep file-name-separator-string)
-		 (pwd (getcwd))
-		 (full (expand-path path))
-		 (_ (chdir (dirname full)))
-		 (dir (getcwd)))
-	(chdir pwd)
-	(string-append dir
-				   (if (string=? (string-take-right dir (string-length sep)) sep)
-					 ""
-					 sep)
-				   (basename full))))
+         (pwd (getcwd))
+         (full (expand-path path))
+         (_ (chdir (dirname full)))
+         (dir (getcwd)))
+    (chdir pwd)
+    (string-append dir
+                   (if (string=? (string-take-right dir (string-length sep)) sep)
+                       ""
+                       sep)
+                   (basename full))))
 
 (define (env name)
   (getenv (symbol->string name)))
@@ -48,13 +48,13 @@
 
 (define (is-quoted? val)
   (if (> (string-length val) 0)
-	  (member (string-take val 1) '("'" "\""))
-	  #f))
+      (member (string-take val 1) '("'" "\""))
+      #f))
 
 (define (auto-quote val)
   (if (is-quoted? val)
-	val
-	(dquote val)))
+      val
+      (dquote val)))
 
 (define (varl name val)
   (setenv (symbol->string name) val)
@@ -69,22 +69,22 @@
 
 (define (source-if-exists path)
   (if (file-exists? (absolute-path path))
-	(source path)))
+      (source path)))
 
 (define (for-file-in-tree path f)
   (ftw (absolute-path path) (lambda (name stat flag)
-							  (if (eq? flag 'regular) (f name stat))
-							  #t)))
+                              (if (eq? flag 'regular) (f name stat))
+                              #t)))
 
 (define shell
   (let ((sh (if (> (length (command-line)) 1)
-			  (list-ref (command-line) 1)
-			  (basename (getenv "SHELL")))))
-	(cond
-	  [(string=? sh "fish")
-	   'fish]
-	  [(member sh '("posix" "sh" "bash" "ash" "dash" "ksh" "zsh"))
-	   'posix])))
+                (list-ref (command-line) 1)
+                (basename (getenv "SHELL")))))
+    (cond
+      [(string=? sh "fish")
+       'fish]
+      [(member sh '("posix" "sh" "bash" "ash" "dash" "ksh" "zsh"))
+       'posix])))
 
 (define os
   (string->symbol (string-downcase (utsname:sysname (uname)))))

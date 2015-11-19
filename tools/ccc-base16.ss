@@ -28,27 +28,28 @@
 
 (define (termcodes tmux screen general)
   (cond
-	[(getenv "TMUX")
-	 tmux]
-	[(if (> (string-length (getenv "TERM")) 6)
-	   (string=? (string-take (getenv "TERM") 6) "screen")
-	   #f)
-	 screen]
-	[else
-	  general]))
+    [(getenv "TMUX")
+     tmux]
+    [(if (> (string-length (getenv "TERM")) 6)
+         (string=? (string-take (getenv "TERM") 6) "screen")
+         #f)
+     screen]
+    [else
+     general]))
 
 (define (templ) (termcodes
-				  "\x1bPtmux;\x1b\x1b]4;~d;rgb:~a\x07\x1b\\"
-				  "\x1bP\x1b]4;~d;rgb:~a\x07\x1b\\"
-				  "\x1b]4;~d;rgb:~a\x1b\\"))
+                  "\x1bPtmux;\x1b\x1b]4;~d;rgb:~a\x07\x1b\\"
+                  "\x1bP\x1b]4;~d;rgb:~a\x07\x1b\\"
+                  "\x1b]4;~d;rgb:~a\x1b\\"))
 
 (define (templ-var) (termcodes
-					  "\x1bPtmux;\x1b\x1b]~d;rgb:~a\x07\x1b\\"
-					  "\x1bP\x1b]~d;rgb:~a\x07\x1b\\"
-					  "\x1b]~d;rgb:~a\x1b\\"))
+                      "\x1bPtmux;\x1b\x1b]~d;rgb:~a\x07\x1b\\"
+                      "\x1bP\x1b]~d;rgb:~a\x07\x1b\\"
+                      "\x1b]~d;rgb:~a\x1b\\"))
 
-(map (lambda (n) (format #t (templ) n (eval-string (format #f "colour~2,'0d" n))))
-	 '(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21))
+(map (lambda (n)
+       (format #t (templ) n (eval-string (format #f "colour~2,'0d" n))))
+     (iota 22))
 
 (format #t (templ-var) 10 colour_fg)
 (format #t (templ-var) 11 colour_bg)
