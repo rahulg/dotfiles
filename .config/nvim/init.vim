@@ -35,6 +35,8 @@ set clipboard+=unnamedplus
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+set cursorline
+
 set background=dark
 let base16colorspace=256
 colorscheme base16-default
