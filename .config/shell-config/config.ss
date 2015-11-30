@@ -18,6 +18,9 @@
 
 (alias 'weechat "weechat -d $XDG_CONFIG_HOME/weechat")
 
+(if (and (getenv "TMUX") (string=? (getenv "TERM") "tmux-256color"))
+    (alias 'ssh "env TERM=screen-256color ssh"))
+
 (cond
   [(eq? os 'darwin)
    (prefix 'PATH "/usr/local/bin" "/usr/local/sbin")
