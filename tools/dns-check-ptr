@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -e -u
+name=${1}
+if [[ ${name} != *. ]]; then
+	name=${name}.
+fi
+
+v4s=$(dig +short -t A ${name})
+v6s=$(dig +short -t AAAA ${name})
+
+errors=0
+
+for addr in ${v4s} ${v6s}; do
+	ptr=$(dig +short -x ${addr})
+	if [[ ${ptr} != ${name} ]]; then
+		errors=1
+		echo "Address '${addr}' resolves to '${ptr}' instead of '${name}'"
+	fi
+done
+
+exit $errors
