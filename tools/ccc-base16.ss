@@ -9,12 +9,12 @@
 (define colour06 "86/c1/b9") ; base 0c
 (define colour07 "d8/d8/d8") ; base 05
 (define colour08 "58/58/58") ; base 03
-(define colour09 colour01)
-(define colour10 colour02)
-(define colour11 colour03)
-(define colour12 colour04)
-(define colour13 colour05)
-(define colour14 colour06)
+(define colour09 colour01) ; copy colour 1
+(define colour10 colour02) ; copy colour 2
+(define colour11 colour03) ; copy colour 3
+(define colour12 colour04) ; copy colour 4
+(define colour13 colour05) ; copy colour 5
+(define colour14 colour06) ; copy colour 6
 (define colour15 "f8/f8/f8") ; base 07
 (define colour16 "dc/96/56") ; base 09
 (define colour17 "a1/69/46") ; base 0f
