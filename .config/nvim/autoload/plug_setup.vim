@@ -1,7 +1,7 @@
 " vim: foldmethod=marker foldlevel=0
 
 function! plug_setup#BuildYouCompleteMe(info)
-	!python2 ./install.py --clang-completer --system-libclang --gocode-completer --system-boost
+	!python2 ./install.py --clang-completer --gocode-completer --racer-completer --tern-completer
 endfunction
 
 function! plug_setup#BuildVimGo(info)
