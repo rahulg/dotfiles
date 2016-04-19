@@ -110,6 +110,7 @@ Plug 'nvie/vim-flake8'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'ledger/vim-ledger'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 filetype plugin indent on
