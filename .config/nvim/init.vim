@@ -88,6 +88,7 @@ Plug 'tpope/vim-commentary'
 
 " language support, auto-formatting, linting, etc.
 Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe') }
+	let g:ycm_server_python_interpreter = os_dep#system_python()
 	call os_dep#set_rust_src_path()
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
