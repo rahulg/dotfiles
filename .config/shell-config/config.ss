@@ -75,4 +75,6 @@
    (varl '__fish_git_prompt_char_upstream_equal ".")
    (varl '__fish_git_prompt_char_upstream_diverged "X")
    (varl 'fish_greeting "")
+   (if (and (eq? os 'linux) (getenv "XDG_SESSION_TYPE") (string=? (getenv "XDG_SESSION_TYPE") "wayland"))
+       (varl 'FISH_CLIPBOARD_CMD "cat"))
    (print "guile ~/tools/ccc-base16.ss ^/dev/null")])
