@@ -103,12 +103,7 @@ Plug 'leshill/vim-json'
 Plug 'othree/html5.vim'
 Plug 'indenthtml.vim'
 Plug 'mutewinter/nginx.vim'
-Plug 'rhysd/vim-clang-format'
-	let g:clang_format#code_style = 'file'
-	let g:clang_format#detect_style_file = 1
-	let g:clang_format#auto_format = 1
-	let g:clang_format#auto_format_on_insert_leave = 1
-	let g:clang_format#auto_formatexpr = 1
+Plug 'Chiel92/vim-autoformat'
 Plug 'nvie/vim-flake8'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
