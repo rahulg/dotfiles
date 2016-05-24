@@ -69,3 +69,5 @@ set-option -wg status-left " #[fg=colour18,bold]#(hostname -s): #S "
 set-option -wg status-right-length 120
 set-option -wg status-right "#(~/tools/tmux-utils status_right)"
 set-option -wg status-interval 2
+
+if-shell "test (uname) = Darwin" "set-option -ga terminal-overrides ',xterm*:sitm=\E[3m,ritm=\E[23m'"
