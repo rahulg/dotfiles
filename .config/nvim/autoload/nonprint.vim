@@ -26,7 +26,7 @@ if !exists('g:nonprint#has_setup')
 
 		set list
 		if has('conceal')
-			syntax match LeadingSpaces /\(^ *\)\@<= / conceal cchar=.
+			syntax match LeadingSpaces /\(^ *\)\@<= / containedin=ALL conceal cchar=.
 		endif
 
 		let g:nonprint#enabled = 1
@@ -39,7 +39,7 @@ if !exists('g:nonprint#has_setup')
 
 		set nolist
 		if has('conceal')
-			syntax match LeadingSpaces /\(^ *\)\@<= /
+			syntax clear LeadingSpaces
 		endif
 
 		let g:nonprint#enabled = 0
