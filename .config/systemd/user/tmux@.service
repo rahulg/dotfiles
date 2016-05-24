@@ -3,8 +3,8 @@ Description=Tmux session [%i]
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/tmux -f ${HOME}/.config/tmux/config new-session -ds %i
-ExecStop=/usr/bin/tmux -f ${HOME}/.config/tmux/config kill-session -t %i
+ExecStart=/usr/bin/tmux -f %h/.config/tmux/config new-session -ds %i
+ExecStop=/usr/bin/tmux -f %h/.config/tmux/config kill-session -t %i
 Restart=on-failure
 
 [Install]
