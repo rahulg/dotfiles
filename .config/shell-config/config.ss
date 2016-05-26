@@ -24,6 +24,7 @@
 (cond
   [(eq? os 'darwin)
    (prefix 'PATH "/usr/local/bin" "/usr/local/sbin")
+   (suffix 'PATH "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources")
    (suffix 'PATH "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources")])
 
 (cond
