@@ -1,11 +1,14 @@
 ---
-Language:                             Cpp
-BasedOnStyle:                         LLVM
+BasedOnStyle:                         Mozilla
 IndentWidth:                          4
 TabWidth:                             4
 UseTab:                               ForIndentation
-BreakBeforeBraces:                    Linux
+---
+Language:                             Cpp
 AllowShortIfStatementsOnASingleLine:  false
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType:           None
+BreakBeforeBraces:                    Attach
 IndentCaseLabels:                     false
 Cpp11BracedListStyle:                 true
 Standard:                             Cpp11
