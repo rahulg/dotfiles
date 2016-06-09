@@ -24,6 +24,8 @@ def oscommon(f):
 
 def call(fname, *args, **kwargs):
     os = sys.platform
+    if not fname in handlers:
+        raise KeyError
     return handlers[fname][os](*args, **kwargs)
 
 
