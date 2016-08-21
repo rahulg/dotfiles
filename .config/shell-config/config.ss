@@ -14,6 +14,10 @@
 
 (var 'MAKEFLAGS (string-append "-j" (number->string (total-processor-count))))
 
+(var 'HOMEBREW_NO_ANALYTICS "1")
+(var 'HOMEBREW_NO_AUTO_UPDATE "1")
+(var 'HOMEBREW_NO_EMOJI "1")
+
 (abbr 'digs "dig +short")
 
 (alias 'weechat "weechat -d $XDG_CONFIG_HOME/weechat")
