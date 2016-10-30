@@ -51,6 +51,7 @@ nnoremap <c-right> :tabnext<cr>
 nnoremap <F1> <nop>
 inoremap <F1> <nop>
 nnoremap Q <nop>
+inoremap <C-Space> <Esc>
 
 nmap <F2> :call nonprint#toggle()<cr>
 
