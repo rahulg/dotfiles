@@ -1,0 +1,7 @@
+bind -e
+bind "^W" ed-delete-prev-word
+bind "\e[5D" ed-prev-word
+bind "\e[5C" em-next-word
+bind "\e[1;5D" ed-prev-word
+bind "\e[1;5C" em-next-word
+bind "^R" em-inc-search-prev
