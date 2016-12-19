@@ -16,6 +16,7 @@
            "/usr/bin")
 
 (var 'GOPATH (string-append home "/scratch/go"))
+(var 'GOBIN (string-append home "/scratch/go/" (run (string-append home "/tools/go-arch"))))
 
 (var 'MAKEFLAGS (string-append "-j" (number->string (total-processor-count))))
 

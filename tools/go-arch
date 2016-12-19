@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+binexists() {
+	type -t ${1} >/dev/null
+}
+
+binexists go && (
+	go version 2>/dev/null | sed -re 's#go version go[^ ]+ ([^/]+)/(.+)#\1_\2#' 2>/dev/null
+)
