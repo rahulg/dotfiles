@@ -37,6 +37,9 @@
 (define (env name)
   (getenv (symbol->string name)))
 
+(define home
+  (env 'HOME))
+
 (define (surround value token)
   (string-append token value token))
 

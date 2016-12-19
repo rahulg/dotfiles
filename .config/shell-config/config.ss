@@ -1,21 +1,21 @@
 (load "shell.ss")
 
-(var 'XDG_CONFIG_HOME "$HOME/.config")
-(var 'XDG_CACHE_HOME "$HOME/.cache")
-(var 'XDG_DATA_HOME "$HOME/.local/share")
+(var 'XDG_CONFIG_HOME (string-append home "/.config"))
+(var 'XDG_CACHE_HOME (string-append home "/.cache"))
+(var 'XDG_DATA_HOME (string-append home "/.local/share"))
 
 (var 'LANG "en_GB.UTF-8")
 (var 'EDITOR "nvim")
 (var 'MANPAGER (dquote "/bin/sh -c \\\"col -b | nvim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch' -\\\""))
 
 (array-var 'PATH
-           "$HOME/tools"
+           (string-append home "/tools")
            "/usr/local/sbin"
            "/usr/local/bin"
            "/usr/sbin"
            "/usr/bin")
 
-(var 'GOPATH "$HOME/scratch/go")
+(var 'GOPATH (string-append home "/scratch/go"))
 
 (var 'MAKEFLAGS (string-append "-j" (number->string (total-processor-count))))
 
@@ -27,7 +27,7 @@
 
 (alias 'weechat "weechat -d $XDG_CONFIG_HOME/weechat")
 
-(if (and (getenv "TMUX") (string=? (getenv "TERM") "tmux-256color"))
+(if (and (env 'TMUX) (string=? (env 'TERM) "tmux-256color"))
     (alias 'ssh "env TERM=screen-256color ssh"))
 
 (cond
@@ -41,9 +41,9 @@
    (var 'HISTCONTROL "ignoreboth")
    (var 'HISTFILE "$XDG_DATA_HOME/bash/history")
    (var 'PS1 "\\u@\\h \\W\\$ ")
-   (for-file-in-tree (string-append (env 'HOME) "/.config/bash/functions") (lambda (name stat)
+   (for-file-in-tree (string-append home "/.config/bash/functions") (lambda (name stat)
                                                                              (source name)))
-   (source-if-exists (string-append (env 'HOME) "/.config/bash/local.bash"))
+   (source-if-exists (string-append home "/.config/bash/local.bash"))
    (print "guile ~/tools/ccc-base16.ss 2>/dev/null")]
 
   [(eq? shell 'fish)
@@ -51,7 +51,7 @@
      [(getenv "Apple_PubSub_Socket_Render")
       (print "bind \\e\\[5D prevd-or-backward-word")
       (print "bind \\e\\[5C nextd-or-forward-word")])
-   (source-if-exists (string-append (env 'HOME) "/.config/fish/local.fish"))
+   (source-if-exists (string-append home "/.config/fish/local.fish"))
    (varl 'fish_color_normal "normal")
    (varl 'fish_color_command "7cafc2")
    (varl 'fish_color_quote "f7ca88")
