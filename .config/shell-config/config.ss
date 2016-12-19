@@ -8,7 +8,12 @@
 (var 'EDITOR "nvim")
 (var 'MANPAGER (dquote "/bin/sh -c \\\"col -b | nvim -c 'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch' -\\\""))
 
-(prefix 'PATH "$HOME/tools")
+(array-var 'PATH
+           "$HOME/tools"
+           "/usr/local/sbin"
+           "/usr/local/bin"
+           "/usr/sbin"
+           "/usr/bin")
 
 (var 'GOPATH "$HOME/scratch/go")
 
@@ -27,7 +32,6 @@
 
 (cond
   [(eq? os 'darwin)
-   (prefix 'PATH "/usr/local/bin" "/usr/local/sbin")
    (suffix 'PATH "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources")
    (suffix 'PATH "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources")])
 
