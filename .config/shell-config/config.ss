@@ -13,7 +13,9 @@
            "/usr/local/sbin"
            "/usr/local/bin"
            "/usr/sbin"
-           "/usr/bin")
+           "/usr/bin"
+           "/sbin"
+           "/bin")
 
 (var 'GOPATH (string-append home "/scratch/go"))
 (var 'GOBIN (string-append home "/scratch/go/" (run (string-append home "/tools/go-arch"))))
