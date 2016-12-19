@@ -3,6 +3,12 @@ binexists() {
 	type -t ${1} >/dev/null
 }
 
+if [[ -z $(sed --version 2>/dev/null | head -n1 | grep GNU) ]]; then
+	SEDFLAGS='-E'
+else
+	SEDFLAGS='-r'
+fi
+
 binexists go && (
-	go version 2>/dev/null | sed -re 's#go version go[^ ]+ ([^/]+)/(.+)#\1_\2#' 2>/dev/null
+	go version 2>/dev/null | sed ${SEDFLAGS} -e 's#go version go[^ ]+ ([^/]+)/(.+)#\1_\2#' 2>/dev/null
 )
