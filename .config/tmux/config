@@ -7,7 +7,7 @@ unbind-key C-b
 set-option -g prefix C-o
 bind-key C-o send-prefix
 
-bind-key r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
+bind-key r source-file ~/.config/tmux/config \; display "Reloaded!"
 
 bind-key | split-window -h
 bind-key - split-window -v
