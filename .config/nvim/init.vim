@@ -106,11 +106,13 @@ Plug 'indenthtml.vim'
 Plug 'mutewinter/nginx.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'nvie/vim-flake8'
-let g:flake8_show_in_gutter=1
+	let g:flake8_show_in_gutter=1
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'ledger/vim-ledger'
 Plug 'plasticboy/vim-markdown'
+Plug 'darfink/vim-plist'
+	let g:plist_json_filetype = 'json'
 
 call plug#end()
 filetype plugin indent on
