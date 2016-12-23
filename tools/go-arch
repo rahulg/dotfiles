@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
-binexists() {
-	type -t ${1} >/dev/null
-}
+set -eu
 
-if [[ -z $(sed --version 2>/dev/null | head -n1 | grep GNU) ]]; then
-	SEDFLAGS='-E'
-else
-	SEDFLAGS='-r'
+os=$(uname -s | tr A-Z a-z)
+arch=$(uname -m)
+
+if [[ ${arch} = x86_64 ]]; then
+	arch=amd64
 fi
 
-binexists go && (
-	go version 2>/dev/null | sed ${SEDFLAGS} -e 's#go version go[^ ]+ ([^/]+)/(.+)#\1_\2#' 2>/dev/null
-)
+echo "${os}_${arch}"
