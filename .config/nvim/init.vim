@@ -115,6 +115,5 @@ Plug 'darfink/vim-plist'
 	let g:plist_json_filetype = 'json'
 
 call plug#end()
-filetype plugin indent on
 
 " }
