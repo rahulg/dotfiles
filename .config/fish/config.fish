@@ -69,7 +69,9 @@ if begin test (uname) = Linux; and set -q XDG_SESSION_TYPE; and test $XDG_SESSIO
 	set FISH_CLIPBOARD_CMD wayclip
 end
 
-# guile ~/tools/ccc-base16.ss ^/dev/null
+# colour scheme
+python ~/tools/ccc-base16.py
+
 if test -f "$HOME/.config/fish/local.fish"
 	source "$HOME/.config/fish/local.fish"
 end
