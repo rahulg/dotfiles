@@ -6,7 +6,7 @@ set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 set -x MANPAGER '/bin/sh -c "col -b | nvim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"'
 
-set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/tools"
+set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.cargo/bin" "$HOME/tools"
 
 set -x GOPATH "$HOME/scratch/go"
 set -x GOBIN "$HOME/scratch/go/bin/"(eval $HOME/tools/go-arch)
