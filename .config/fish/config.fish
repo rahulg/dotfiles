@@ -70,7 +70,9 @@ if begin test (uname) = Linux; and set -q XDG_SESSION_TYPE; and test $XDG_SESSIO
 end
 
 # colour scheme
-python ~/tools/ccc-base16.py
+if test -t 1
+	python ~/tools/ccc-base16.py
+end
 
 if test -f "$HOME/.config/fish/local.fish"
 	source "$HOME/.config/fish/local.fish"
