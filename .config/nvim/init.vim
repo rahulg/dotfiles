@@ -91,7 +91,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe') }
 	let g:ycm_autoclose_preview_window_after_insertion = 1
 	let g:ycm_server_python_interpreter = os_dep#system_python()
-	call os_dep#set_rust_src_path()
+	let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
