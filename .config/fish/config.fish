@@ -70,7 +70,7 @@ if begin test (uname) = Linux; and set -q XDG_SESSION_TYPE; and test $XDG_SESSIO
 end
 
 # colour scheme
-if test -t 1
+if status is-interactive
 	python ~/tools/ccc-base16.py
 end
 
