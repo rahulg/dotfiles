@@ -106,8 +106,9 @@ Plug 'indenthtml.vim'
 Plug 'mutewinter/nginx.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'nvie/vim-flake8'
-	let g:flake8_show_in_gutter=1
+	let g:flake8_show_in_gutter = 1
 Plug 'rust-lang/rust.vim'
+	let g:rustfmt_autosave = 1
 Plug 'cespare/vim-toml'
 Plug 'ledger/vim-ledger'
 Plug 'plasticboy/vim-markdown'
