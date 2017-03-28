@@ -1,6 +1,13 @@
+# XDG base directory spec
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_CACHE_HOME "$HOME/.cache"
 set -x XDG_DATA_HOME "$HOME/.local/share"
+
+set -x LESSHISTFILE '-'
+set -x TERMINFO "$XDG_DATA_HOME/terminfo"
+set -x TERMINFO_DIRS "$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
+set -x RANDFILE "$XDG_DATA_HOME/openssl/rnd"
 
 set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
