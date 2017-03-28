@@ -92,6 +92,11 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe')
 	let g:ycm_autoclose_preview_window_after_insertion = 1
 	let g:ycm_server_python_interpreter = os_dep#system_python()
 	let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
+Plug 'w0rp/ale'
+	let g:ale_set_quickfix = 1
+	let g:ale_set_loclist = 0
+	let g:ale_open_list = 1
+	let g:ale_rust_cargo_use_check = 1
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
