@@ -94,6 +94,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe')
 	let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
 Plug 'w0rp/ale'
 	let g:ale_lint_on_text_changed = 0 " this kills the core m
+	let g:ale_open_list = 1
 	let g:ale_sign_column_always = 1
 	nmap <silent> <C-k> <Plug>(ale_next_wrap)
 	nmap <silent> <C-j> <Plug>(ale_previous_wrap)
