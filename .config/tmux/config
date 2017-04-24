@@ -30,7 +30,6 @@ unbind-key [
 bind-key escape copy-mode
 unbind-key p
 bind-key p paste-buffer
-bind-key -t vi-copy 'v' begin-selection
 
 # Config
 set-option -sg escape-time 0
