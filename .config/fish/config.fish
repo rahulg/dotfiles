@@ -13,10 +13,10 @@ set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 set -x MANPAGER '/bin/sh -c "col -b | nvim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"'
 
-set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.cargo/bin" "$HOME/tools"
+set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.local/bin" "$HOME/.cargo/bin"
 
 set -x GOPATH "$HOME/scratch/go"
-set -x GOBIN "$HOME/scratch/go/bin/"(eval $HOME/tools/go-arch)
+set -x GOBIN "$HOME/scratch/go/bin/"(go-arch)
 
 set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
@@ -78,7 +78,7 @@ end
 
 # colour scheme
 if status is-interactive
-	python ~/tools/ccc-base16.py
+	ccc-base16.py
 end
 
 if test -f "$HOME/.config/fish/local.fish"
