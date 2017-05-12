@@ -79,7 +79,7 @@ let g:lightline = {
 	\ }
 Plug 'itchyny/lightline.vim'
 	set laststatus=2
-Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	nmap <F6> :TagbarToggle<cr>
 Plug 'tpope/vim-surround'
