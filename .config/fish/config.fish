@@ -78,7 +78,9 @@ end
 
 # colour scheme
 if status is-interactive
-	ccc-base16.py
+	if not set -q KONSOLE_DBUS_WINDOW
+		ccc-base16.py
+	end
 end
 
 if test -f "$HOME/.config/fish/local.fish"
