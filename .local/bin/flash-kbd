@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -eu
+
+opoo() { echo >&2 ${@}; }
+
+if ! command -v dfu-programmer >/dev/null; then
+	opoo 'dfu-programmer not installed'
+	exit 1
+fi
+
+function prg() {
+	local hex=${1}
+	if [[ ! -f ${hex} ]]; then
+		opoo "${hex} not found"
+	fi
+
+	dfu-programmer atmega32u4 erase --force
+	dfu-programmer atmega32u4 flash ${hex}
+	dfu-programmer atmega32u4 reset
+}
+
+hexf=${1:-help}
+
+case ${hexf} in
+	help|-h|--help)
+		opoo "$(basename ${0}) <hex-file>"
+		;;
+	*)
+		prg ${hexf}
+		;;
+esac
+
