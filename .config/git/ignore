@@ -14,10 +14,8 @@ Icon?
 *.ko
 
 # Python
-venv2
-venv3
-venvpy
 __pycache__
+.mypy_cache
 
 # Ruby
 .bundle
