@@ -71,6 +71,14 @@ call plug#begin('$XDG_DATA_HOME/nvim/site/bundle')
 let g:plug_timeout=120
 let g:plug_window='tabnew'
 
+" bundled
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_preview = 1
+let g:netrw_winsize = 25
+
 " navigation
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-unimpaired'
