@@ -12,6 +12,15 @@ set -x RANDFILE "$XDG_DATA_HOME/openssl/rnd"
 set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 
+function go-arch
+	set -l os (uname -s | tr A-Z a-z)
+	set -l arch (uname -m)
+	if test "$arch" = "x86_64"
+		set -l arch 'amd64'
+	end
+	printf "%s_%s" "$os" "$arch"
+end
+
 set -x GOPATH "$HOME/scratch/go"
 set -x GOBIN "$HOME/scratch/go/bin/"(go-arch)
 
