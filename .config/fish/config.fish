@@ -11,9 +11,6 @@ set -x RANDFILE "$XDG_DATA_HOME/openssl/rnd"
 
 set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
-set -x MANPAGER '/bin/sh -c "col -b | nvim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"'
-
-set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.local/bin" "$HOME/.cargo/bin"
 
 set -x GOPATH "$HOME/scratch/go"
 set -x GOBIN "$HOME/scratch/go/bin/"(go-arch)
@@ -22,16 +19,24 @@ set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x HOMEBREW_NO_EMOJI 1
 
-abbr digs 'dig +short'
+if status is-login
+	set -x MANPAGER '/bin/sh -c "col -b | nvim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"'
+	set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.local/bin" "$HOME/.cargo/bin"
 
-if begin set -q TMUX; and test $TERM = 'tmux-256color'; end
-	alias ssh "env TERM=screen-256color ssh"
+	if test (uname) = Darwin
+		set -x PATH $PATH "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
+		set -x PATH $PATH "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
+	end
+
+	abbr digs 'dig +short'
+
+	if begin set -q TMUX; and test $TERM = 'tmux-256color'; end
+		alias ssh "env TERM=screen-256color ssh"
+	end
 end
 
 if test (uname) = Darwin
 	set -x MAKEFLAGS "-j"(sysctl -n hw.ncpu)
-	set -x PATH $PATH "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
-	set -x PATH $PATH "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
 	bind \e\[5D prevd-or-backward-word
 	bind \e\[5C nextd-or-forward-word
 else if test (uname) = Linux
@@ -77,10 +82,8 @@ if begin test (uname) = Linux; and set -q XDG_SESSION_TYPE; and test $XDG_SESSIO
 end
 
 # colour scheme
-if status is-interactive
-	if not set -q KONSOLE_DBUS_WINDOW
-		ccc-base16.py
-	end
+if begin status is-login; and set -q ITERM_SESSION_ID; end
+	ccc-base16.py
 end
 
 if test -f "$HOME/.config/fish/local.fish"
