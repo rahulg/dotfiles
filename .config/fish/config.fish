@@ -38,10 +38,6 @@ if status is-login
 	end
 
 	abbr digs 'dig +short'
-
-	if begin set -q TMUX; and test $TERM = 'tmux-256color'; end
-		alias ssh "env TERM=screen-256color ssh"
-	end
 end
 
 if test (uname) = Darwin
