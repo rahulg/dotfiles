@@ -8,6 +8,7 @@ set -x TERMINFO "$XDG_DATA_HOME/terminfo"
 set -x TERMINFO_DIRS "$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -x RANDFILE "$XDG_DATA_HOME/openssl/rnd"
+set -x WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
 
 set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
@@ -29,7 +30,6 @@ set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x HOMEBREW_NO_EMOJI 1
 
 if status is-login
-	set -x MANPAGER '/bin/sh -c "col -b | nvim -c \'set ft=man ts=8 fdm=indent nomod nolist nonu noma nofoldenable nohlsearch\' -"'
 	set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.local/bin" "$HOME/.cargo/bin"
 
 	if test (uname) = Darwin
