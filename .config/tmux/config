@@ -7,7 +7,7 @@ unbind-key C-b
 set-option -g prefix C-o
 bind-key C-o send-prefix
 
-bind-key r source-file ~/.config/tmux/config \; display "Reloaded!"
+bind-key r source-file ~/.config/tmux/config \; display "reloaded config"
 
 bind-key | split-window -h
 bind-key - split-window -v
@@ -16,9 +16,9 @@ bind-key -n S-left previous-window
 bind-key -n S-right next-window
 bind-key -r C-a last-window
 
-bind-key @ set monitor-activity
+bind-key @ set monitor-activity \; display "toggled monitor-activity"
 
-bind-key l choose-tree -u
+bind-key l choose-tree
 
 bind-key -n C-k clear-history
 
