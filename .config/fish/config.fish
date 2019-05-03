@@ -13,6 +13,12 @@ set -x WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
 set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 
+function client-tz
+	timedatectl status | awk '/Time zone:/{ print $3 }'; or echo 'Europe/London'
+end
+
+set -x SSH_CLIENT_TZ (client-tz)
+
 function go-arch
 	set -l os (uname -s | tr A-Z a-z)
 	set -l arch (uname -m)
