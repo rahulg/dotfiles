@@ -28,8 +28,6 @@ set nobackup
 set noswapfile
 set writebackup
 
-set shortmess+=I
-
 set clipboard+=unnamedplus
 
 set mouse=a
