@@ -1,4 +1,10 @@
-" vim: foldmethod=marker foldmarker={,} foldlevel=0
+function! SourceIfExists(path)
+	if filereadable(expand(a:path))
+		exe 'source' a:path
+	endif
+endfunction
+
+call SourceIfExists('local/pre.vim')
 
 " options {
 
@@ -22,20 +28,21 @@ set softtabstop=4
 set autowrite
 set autochdir
 
-set lazyredraw
 
 set nobackup
 set noswapfile
 set writebackup
 
+set shortmess+=I
+
 set clipboard+=unnamedplus
+
+set lazyredraw
+set cursorline
 
 set mouse=a
 
 set termguicolors
-
-set cursorline
-
 set background=dark
 let base16colorspace=256
 colorscheme base16-default
@@ -72,9 +79,7 @@ let g:plug_window='tabnew'
 " bundled
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_preview = 1
 let g:netrw_winsize = 25
 
 " navigation
@@ -87,29 +92,33 @@ let g:lightline = {
 	\ }
 Plug 'itchyny/lightline.vim'
 	set laststatus=2
-Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 	nmap <F6> :TagbarToggle<cr>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
+	autocmd FileType spec setlocal commentstring=#\ %s
 
-" language support, auto-formatting, linting, etc.
-Plug 'Valloric/YouCompleteMe', { 'do': function('plug_setup#BuildYouCompleteMe') }
-	let g:ycm_autoclose_preview_window_after_insertion = 1
-	let g:ycm_server_python_interpreter = os_dep#system_python()
-	let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
-Plug 'w0rp/ale'
-	let g:ale_lint_on_text_changed = 0 " this kills the core m
+" search
+Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
+
+" lsp: lint, completion, formatting
+Plug 'dense-analysis/ale'
 	let g:ale_open_list = 1
 	let g:ale_sign_column_always = 1
 	nmap <silent> <C-k> <Plug>(ale_next_wrap)
 	nmap <silent> <C-j> <Plug>(ale_previous_wrap)
+	nmap <F3> :ALEFix<cr>
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#enable_at_startup = 1
+	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" languages
 Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
 	autocmd FileType fish setlocal foldmethod=expr
-Plug 'fatih/vim-go', { 'do': function('plug_setup#BuildVimGo') }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
@@ -117,8 +126,6 @@ Plug 'leshill/vim-json'
 Plug 'othree/html5.vim'
 Plug 'mutewinter/nginx.vim'
 Plug 'Chiel92/vim-autoformat'
-Plug 'nvie/vim-flake8'
-	let g:flake8_show_in_gutter = 1
 Plug 'rust-lang/rust.vim'
 	let g:rustfmt_autosave = 1
 Plug 'cespare/vim-toml'
@@ -126,7 +133,36 @@ Plug 'ledger/vim-ledger'
 Plug 'plasticboy/vim-markdown'
 Plug 'darfink/vim-plist'
 	let g:plist_json_filetype = 'json'
+Plug 'Peaches491/vim-glog-syntax'
+Plug 'solarnz/thrift.vim'
+Plug 'inkarkat/diff-fold.vim'
+Plug 'vim-python/python-syntax'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+function! ConfigureSemshiHighlights()
+	hi semshiLocal           ctermfg=209 guifg=#ff875f
+	hi semshiGlobal          ctermfg=215 guifg=#ffaf5f
+	hi semshiImported        ctermfg=222 guifg=#ffd787 cterm=bold gui=bold
+	hi semshiParameter       ctermfg=74  guifg=#5fafd7
+	hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
+	hi semshiFree            ctermfg=218 guifg=#ffafd7
+	hi semshiBuiltin         ctermfg=210 guifg=#ff8787
+	hi semshiAttribute       ctermfg=79  guifg=#5fd7af
+	hi semshiSelf            ctermfg=249 guifg=#b2b2b2
+	hi semshiUnresolved      ctermfg=228 guifg=#fffc87 cterm=underline gui=underline
+	hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=241 guibg=#626262
+
+	hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d71e00
+	hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d71e00
+	sign define semshiError text=E> texthl=semshiErrorSign
+endfunction
+
+call SourceIfExists('local/plug.vim')
 
 call plug#end()
 
+call ConfigureSemshiHighlights()
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+
 " }
+
+call SourceIfExists('local/post.vim')
