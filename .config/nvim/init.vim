@@ -1,6 +1,8 @@
 function! SourceIfExists(path)
-	if filereadable(expand(a:path))
-		exe 'source' a:path
+	let vimrcdir = fnamemodify($MYVIMRC, ':p:h')
+	let fullpath = vimrcdir . '/' . a:path
+	if filereadable(fullpath)
+		exe 'source' fullpath
 	endif
 endfunction
 
