@@ -14,7 +14,11 @@ set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 
 function client-tz
-	timedatectl status | awk '/Time zone:/{ print $3 }'; or echo 'Europe/London'
+	if test (uname -s) = 'Darwin'
+		readlink /etc/localtime | sed 's#/var/db/timezone/zoneinfo/##'
+	else
+		timedatectl status | awk '/Time zone:/{ print $3 }'
+	end
 end
 
 set -x SSH_CLIENT_TZ (client-tz)
