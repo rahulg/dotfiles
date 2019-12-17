@@ -27,7 +27,7 @@ function fish_prompt -d 'Write out the prompt'
 	end
 
 	# basic prompt
-	printf '%s%s%s@%s %s%s%s' "$__fish_prompt_cwd" $USER "$__fish_prompt_normal" $__fish_prompt_hostname (prompt_pwd) "$__fish_prompt_normal" (__fish_git_prompt)
+	printf '%s%s%s@%s %s%s%s' "$__fish_prompt_cwd" $USER "$__fish_prompt_normal" $__fish_prompt_hostname (prompt_pwd) "$__fish_prompt_normal" (__fish_vcs_prompt)
 	
 	# end the prompt
 	switch $USER
