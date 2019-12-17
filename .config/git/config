@@ -18,4 +18,6 @@
 	lst = ls-tree --name-only -r HEAD
 	yolo = push --force-with-lease
 	graph = log --all --graph --decorate --oneline
-	word-diff = diff --word-diff
+	word-diff = diff --word-diff=color
+[include]
+	path = ~/.config/git/config.local
