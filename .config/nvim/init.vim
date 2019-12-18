@@ -1,12 +1,4 @@
-function! SourceIfExists(path)
-	let vimrcdir = fnamemodify($MYVIMRC, ':p:h')
-	let fullpath = vimrcdir . '/' . a:path
-	if filereadable(fullpath)
-		exe 'source' fullpath
-	endif
-endfunction
-
-call SourceIfExists('local/pre.vim')
+call utils#SourceIfExists('local/pre.vim')
 
 " options {
 
@@ -158,7 +150,7 @@ function! ConfigureSemshiHighlights()
 	sign define semshiError text=E> texthl=semshiErrorSign
 endfunction
 
-call SourceIfExists('local/plug.vim')
+call utils#SourceIfExists('local/plug.vim')
 
 call plug#end()
 
@@ -167,4 +159,4 @@ call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 
 " }
 
-call SourceIfExists('local/post.vim')
+call utils#SourceIfExists('local/post.vim')
