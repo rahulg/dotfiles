@@ -71,4 +71,4 @@ set-option -wg status-interval 2
 
 if-shell "test (uname) = Darwin" "set-option -ga terminal-overrides ',xterm*:sitm=\E[3m,ritm=\E[23m'"
 
-source-file "~/.config/tmux/config.local"
+source-file "$HOME/.config/tmux/config.local"
