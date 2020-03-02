@@ -100,6 +100,8 @@ Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 Plug 'dense-analysis/ale'
 	let g:ale_open_list = 1
 	let g:ale_sign_column_always = 1
+	let g:ale_sign_error = "\u2622"
+	let g:ale_sign_warning = "\u26a0"
 	nmap <silent> <C-k> <Plug>(ale_next_wrap)
 	nmap <silent> <C-j> <Plug>(ale_previous_wrap)
 	nmap <F3> :ALEFix<cr>
