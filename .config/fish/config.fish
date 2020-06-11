@@ -40,7 +40,7 @@ set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x HOMEBREW_NO_EMOJI 1
 
 if status is-login
-	set -x PATH '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' "$HOME/.local/bin" "$HOME/.cargo/bin"
+	set -x PATH "$HOME/.local/bin" "$HOME/.cargo/bin" '/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin'
 
 	if test (uname) = Darwin
 		set -x PATH $PATH "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
