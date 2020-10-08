@@ -1,0 +1,4 @@
+function ,
+	paste -sd,
+end
+
