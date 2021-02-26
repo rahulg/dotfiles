@@ -98,13 +98,18 @@ Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 
 " lsp: lint, completion, formatting
 Plug 'dense-analysis/ale'
+	let g:ale_floating_preview = 1
 	let g:ale_open_list = 1
 	let g:ale_sign_column_always = 1
 	let g:ale_sign_error = "\u2622"
 	let g:ale_sign_warning = "\u26a0"
+	let g:ale_fix_on_save = 1
 	nmap <silent> <C-k> <Plug>(ale_next_wrap)
 	nmap <silent> <C-j> <Plug>(ale_previous_wrap)
 	nmap <F3> :ALEFix<cr>
+	nnoremap <silent> K :ALEHover<CR>
+	nnoremap <silent> gd :ALEGoToDefinition<CR>
+	nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	let g:deoplete#enable_at_startup = 1
 	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -158,6 +163,7 @@ call plug#end()
 
 call ConfigureSemshiHighlights()
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#option('sources', {'_': ['ale'] })
 
 " }
 
