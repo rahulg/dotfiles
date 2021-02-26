@@ -39,7 +39,7 @@ set mouse=a
 set termguicolors
 set background=dark
 let base16colorspace=256
-colorscheme base16-default
+colorscheme base16-default-dark
 
 " }
 
