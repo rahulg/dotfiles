@@ -3,5 +3,4 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
 
-let b:ale_linters = ['hack', 'aurora']
-let b:ale_fixers = ['hackfmt']
+let g:ale_fix_on_save = 0
