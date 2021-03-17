@@ -14,6 +14,10 @@ set -x LANG 'en_GB.UTF-8'
 set -x EDITOR 'nvim'
 
 function client-tz
+	if set -q SSH_CLIENT_TZ
+		echo $SSH_CLIENT_TZ
+		return
+	end
 	if test (uname -s) = 'Darwin'
 		readlink /etc/localtime | sed 's#/var/db/timezone/zoneinfo/##'
 	else
