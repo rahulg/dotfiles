@@ -119,7 +119,6 @@ Plug 'kballard/vim-fish'
 	autocmd FileType fish compiler fish
 	autocmd FileType fish setlocal textwidth=79
 	autocmd FileType fish setlocal foldmethod=expr
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
