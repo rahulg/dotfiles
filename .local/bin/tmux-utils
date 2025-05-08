@@ -13,7 +13,7 @@ handlers = defaultdict(dict)
 
 
 def osdependent(f):
-    os, fname = f.__name__.split('_')
+    os, fname = f.__name__.split("_")
     handlers[fname][os] = f
     return f
 
@@ -38,8 +38,8 @@ def run(*cmd):
 
 @osdependent
 def darwin_battery():
-    pmset = run('pmset', '-g', 'batt')
-    cap = re.findall(r'[0-9]+%', pmset)[0]
+    pmset = run("pmset", "-g", "batt")
+    cap = re.findall(r"[0-9]+%", pmset)[0]
     return cap
 
 
@@ -50,28 +50,28 @@ def linux_battery():
 
 @oscommon
 def date():
-    return datetime.datetime.now().strftime('%H:%M %d-%b-%y')
+    return datetime.datetime.now().strftime("%H:%M %d-%b-%y")
 
 
 @oscommon
 def status_right():
     status_elem = [
-        call('battery'),
-        call('date'),
+        call("battery"),
+        call("date"),
     ]
 
-    status = ' {} '.format(
-        ' | '.join(filter(None, status_elem))
-    )
+    status = " {} ".format(" | ".join(filter(None, status_elem)))
 
-    print(status, end='')
+    print(status, end="")
 
 
 def usage():
-    print('{} {}'.format(
-        os.path.basename(__file__),
-        '|'.join(handlers.keys()),
-    ))
+    print(
+        "{} {}".format(
+            os.path.basename(__file__),
+            "|".join(handlers.keys()),
+        )
+    )
 
 
 try:
