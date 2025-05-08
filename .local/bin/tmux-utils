@@ -60,7 +60,7 @@ def status_right():
         call("date"),
     ]
 
-    status = " {} ".format(" | ".join(filter(None, status_elem)))
+    status = " {}  ".format(" | ".join(filter(None, status_elem)))
 
     print(status, end="")
 
